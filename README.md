@@ -40,9 +40,7 @@ The first `npm run test:e2e` builds the app in `e2e` mode (deterministic seeds a
 
 The build uses a **relative base** (`./`) and **hash routing**, so the same `dist/` works at a domain root and at any subpath such as `https://<user>.github.io/updownly/` — no rebuild needed. Set `BASE_PATH=/something/` only if you need absolute URLs.
 
-`.github/workflows/ci.yml` runs typecheck, unit tests, data validation, the production build and the Playwright suite on every push and pull request, and deploys `dist/` to GitHub Pages from `main`.
-
-One-time setup: in the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
+`.github/workflows/ci.yml` runs typecheck, unit tests, data validation, the production build and the Playwright suite on every push and pull request. It does not deploy: GitHub Pages and Cloudflare Pages both just need to run `npm run build` and publish `dist/`.
 
 ### Cloudflare Pages
 

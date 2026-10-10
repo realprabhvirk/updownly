@@ -1,4 +1,4 @@
-name: CI and deploy
+name: CI
 
 on:
   push:
@@ -27,12 +27,8 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run data:validate
-      # Relative base: the same build works at /<repo>/ and at a domain root.
+      # Hosting (Cloudflare Pages) builds and deploys separately from this workflow.
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-        with:
-          path: dist
 
   e2e:
     name: End-to-end (Playwright, mobile Chromium, /updownly/ subpath)
@@ -52,18 +48,3 @@ jobs:
           name: playwright-report
           path: test-results
           retention-days: 7
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: [check, e2e]
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
