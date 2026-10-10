@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run data:validate && tsc -b && vite build",
+    "build": "npm run data:validate && tsc -b && vite build && node scripts/publish.mjs",
     "build:e2e": "vite build --mode e2e",
     "preview": "vite preview",
     "typecheck": "tsc -b",

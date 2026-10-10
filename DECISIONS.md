@@ -11,6 +11,8 @@ Significant decisions, with the reasoning. Newest considerations last within eac
 5. **Service worker:** Workbox `generateSW`, `registerType: 'prompt'` (updates wait for the player) plus `clientsClaim: true` (the first install controls the page immediately, so offline works without a second visit). The update banner is suppressed while a game is active.
 6. **E2E build mode** (`vite build --mode e2e`) adds URL-driven seeds/dates, an optional fixture category (`?fixtures=1`) and a read-only `window.__updownly` hook so tests can answer deterministically. All of it sits behind the compile-time `__E2E__` constant and is stripped from production.
 
+35. **Built site committed at the repo root.** Cloudflare Pages served the repository without running a build, so the browser got raw `.tsx` and showed a black page. Vite now uses `root: 'src'`, builds to `dist/`, and `scripts/publish.mjs` copies the output to the root, which hosts serve as-is. A 4-second inline check replaces a silent blank page with “App didn't load. Check the build ran.”
+
 ## Data
 
 7. **Seven sources, all redistributable:** World Bank WDI (CC BY 4.0), NASA Exoplanet Archive (public domain, acknowledgement shown), OurAirports (public domain), USDA FoodData Central SR Legacy (CC0), Wikidata (CC0), Amniote Life-History Database (CC0 via figshare), PubChem periodic table (public-domain U.S. Government compilation).

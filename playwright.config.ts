@@ -23,7 +23,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   webServer: {
-    command: `npm run build:e2e && npx vite preview --outDir dist-e2e --base /updownly/ --port ${PORT} --strictPort`,
+    command: `npm run build:e2e && npx vite preview --mode e2e --base /updownly/ --port ${PORT} --strictPort`,
     url: `http://localhost:${PORT}/updownly/`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

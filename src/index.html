@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>UPDOWNLY</title>
+    <meta name="description" content="Higher or lower? A fast trivia game built on tens of thousands of real, source-backed facts. Works offline." />
+    <meta name="theme-color" content="#F5F6F8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="UPDOWNLY" />
+    <meta name="application-name" content="UPDOWNLY" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function () {
+        var theme = 'system';
+        try {
+          var raw = localStorage.getItem('updownly:v1');
+          if (raw) theme = (JSON.parse(raw).settings || {}).theme || 'system';
+        } catch (e) {}
+        var dark = theme === 'dark' || (theme === 'system' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // Never a silent blank page: if the app hasn't rendered after 4 s, say so.
+      setTimeout(function () {
+        var app = document.getElementById('app');
+        if (app && app.childElementCount === 0) {
+          var msg = document.createElement('p');
+          msg.textContent = "App didn't load. Check the build ran.";
+          msg.style.cssText = 'font: 600 16px -apple-system, system-ui, sans-serif; color: #f2f4f8; background: #101827; padding: 24px; margin: 0; min-height: 100vh;';
+          document.body.appendChild(msg);
+        }
+      }, 4000);
+    </script>
+    <noscript>UPDOWNLY needs JavaScript to run.</noscript>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

@@ -25,5 +25,6 @@
 - All copy in British English.
 
 ## Quality gates
+- The repo root is the deployed site. After **every** code change run `npm run build` and commit the regenerated root files (`index.html`, `assets/`, `icons/`, `sw.js`, `manifest.webmanifest`, `workbox-*.js`, `favicon.svg`, `_headers`). Never edit them by hand; edit `src/index.html` and `public/` instead.
 - `npm run check` and `npm run test:e2e` must pass. Review screenshots (`npm run screens`) after visual changes — look at them, don't just generate them.
 - Wrap every storage access (see `src/services/storage.ts`). Keep paths relative; never assume hosting at `/`.

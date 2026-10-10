@@ -28,10 +28,23 @@
         document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
       })();
     </script>
-  </head>
+    <script type="module" crossorigin src="./assets/index-DxiznJKk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DeKqu9ox.css">
+  <link rel="manifest" href="./manifest.webmanifest"></head>
   <body>
     <div id="app"></div>
+    <script>
+      // Never a silent blank page: if the app hasn't rendered after 4 s, say so.
+      setTimeout(function () {
+        var app = document.getElementById('app');
+        if (app && app.childElementCount === 0) {
+          var msg = document.createElement('p');
+          msg.textContent = "App didn't load. Check the build ran.";
+          msg.style.cssText = 'font: 600 16px -apple-system, system-ui, sans-serif; color: #f2f4f8; background: #101827; padding: 24px; margin: 0; min-height: 100vh;';
+          document.body.appendChild(msg);
+        }
+      }, 4000);
+    </script>
     <noscript>UPDOWNLY needs JavaScript to run.</noscript>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -2,6 +2,9 @@ import { defineConfig } from 'vitest/config';
 import preact from '@preact/preset-vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const repoRoot = fileURLToPath(new URL('.', import.meta.url));
 
 const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8')) as { version: string };
 const manifestData = JSON.parse(
@@ -14,6 +17,10 @@ const base = process.env.BASE_PATH ?? './';
 const buildStamp = new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
 
 export default defineConfig(({ mode }) => ({
+  // Source lives in src/ (including index.html); the built site is copied
+  // to the repo root by scripts/publish.mjs so hosts can serve it as-is.
+  root: 'src',
+  publicDir: '../public',
   base,
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
@@ -23,7 +30,8 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: ['es2021', 'safari15'],
-    outDir: mode === 'e2e' ? 'dist-e2e' : 'dist',
+    outDir: mode === 'e2e' ? '../dist-e2e' : '../dist',
+    emptyOutDir: true,
     chunkSizeWarningLimit: 700,
   },
   plugins: [
@@ -67,6 +75,7 @@ export default defineConfig(({ mode }) => ({
     }),
   ],
   test: {
+    root: repoRoot,
     include: ['tests/unit/**/*.test.ts'],
     environment: 'node',
   },

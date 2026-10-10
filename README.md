@@ -21,7 +21,7 @@ npm run dev        # http://localhost:5173
 | Command | What it does |
 |---|---|
 | `npm run dev` | Vite dev server |
-| `npm run build` | Validates the dataset, typechecks, builds to `dist/` |
+| `npm run build` | Validates the dataset, typechecks, builds to `dist/`, copies the build to the repo root |
 | `npm run preview` | Serves the production build |
 | `npm run typecheck` | `tsc -b` over app, tests, scripts and configs |
 | `npm test` | Vitest unit tests (engine, data, storage, formatting, pipeline) |
@@ -42,9 +42,11 @@ The build uses a **relative base** (`./`) and **hash routing**, so the same `dis
 
 `.github/workflows/ci.yml` runs typecheck, unit tests, data validation, the production build and the Playwright suite on every push and pull request. It does not deploy: GitHub Pages and Cloudflare Pages both just need to run `npm run build` and publish `dist/`.
 
-### Cloudflare Pages
+### Cloudflare Pages (and any static host)
 
-Connect the repo and use **Framework preset: None**, **Build command: `npm run build`**, **Build output directory: `dist`** (also set in `wrangler.toml`). Node 22 is picked up from `.nvmrc`. If the site shows a black or white screen, Cloudflare is serving the unbuilt source `index.html` — the build command or output directory is wrong (check `/src/main.tsx` is not reachable on the live site).
+The repo root **is** the built site: `npm run build` builds `src/` into `dist/` and `scripts/publish.mjs` copies it to the root (`index.html`, `assets/`, `icons/`, `sw.js`, `manifest.webmanifest`, `workbox-*.js`, `favicon.svg`, `_headers`). Hosts can serve the repository as-is with **no build command** and the root as the output directory. **After any code change, run `npm run build` and commit the root files.**
+
+If the app ever fails to start, the page says “App didn't load. Check the build ran.” instead of staying blank.
 
 ## Installing on an iPhone
 
@@ -102,6 +104,7 @@ Each source's licence, attribution text and links live in `SOURCES` in `src/data
 ## Project layout
 
 ```
+src/index.html    page shell (Vite root is src/)
 src/app/          shell, router (hash), store (signals), game controller
 src/components/   Button, BottomSheet, CategoryTile, FactCard, AnswerButtons…
 src/screens/      Play, CategorySheet, Game, Results, Stats, Settings, Sources…
