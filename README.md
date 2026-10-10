@@ -44,6 +44,10 @@ The build uses a **relative base** (`./`) and **hash routing**, so the same `dis
 
 One-time setup: in the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
 
+### Cloudflare Pages
+
+Connect the repo and use **Framework preset: None**, **Build command: `npm run build`**, **Build output directory: `dist`** (also set in `wrangler.toml`). Node 22 is picked up from `.nvmrc`. If the site shows a black or white screen, Cloudflare is serving the unbuilt source `index.html` — the build command or output directory is wrong (check `/src/main.tsx` is not reachable on the live site).
+
 ## Installing on an iPhone
 
 1. Open the site in **Safari**.
