@@ -337,6 +337,7 @@
 }
 .tile {
   position: relative;
+  width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas:
@@ -709,6 +710,9 @@
 }
 .stat-grid-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.stat-grid.stat-grid-3 dd {
+  font-size: var(--fs-xl);
 }
 .stat-grid > div {
   background: var(--surface);

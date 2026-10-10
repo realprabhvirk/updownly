@@ -32,7 +32,9 @@ effect(() => {
 async function boot(): Promise<void> {
   // End-to-end builds register deterministic fixture categories. The
   // branch is compiled out of production builds.
-  if (__E2E__) (await import('./data/fixtures')).registerFixtures();
+  if (__E2E__ && new URLSearchParams(location.search).has('fixtures')) {
+    (await import('./data/fixtures')).registerFixtures();
+  }
   startRouter();
   render(<App />, document.getElementById('app')!);
 }

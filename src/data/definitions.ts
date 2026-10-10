@@ -581,6 +581,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'users-three',
     featured: true,
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('SP.POP.TOTL'),
   }),
   c({
@@ -595,6 +596,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'bank',
     featured: true,
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('NY.GDP.MKTP.CD'),
   }),
   c({
@@ -609,6 +611,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'coins',
     featured: true,
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('NY.GDP.PCAP.CD'),
   }),
   c({
@@ -623,6 +626,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'map-trifold',
     featured: true,
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('AG.LND.TOTL.K2'),
   }),
   c({
@@ -637,6 +641,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'heartbeat',
     featured: true,
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('SP.DYN.LE00.IN'),
   }),
   c({
@@ -650,6 +655,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare carbon dioxide emissions per person, excluding land use and forestry.',
     icon: 'factory',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('EN.GHG.CO2.PC.CE.AR5'),
   }),
   c({
@@ -663,6 +669,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the share of each country’s population using the internet.',
     icon: 'wifi-high',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('IT.NET.USER.ZS'),
   }),
   c({
@@ -676,6 +683,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare how urbanised each country is.',
     icon: 'city',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('SP.URB.TOTL.IN.ZS'),
   }),
   c({
@@ -689,6 +697,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the share of final energy consumption that comes from renewable sources.',
     icon: 'wind',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('EG.FEC.RNEW.ZS'),
   }),
   c({
@@ -702,6 +711,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the share of each country’s land that is forest.',
     icon: 'tree-evergreen',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('AG.LND.FRST.ZS'),
   }),
   c({
@@ -715,6 +725,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare total fertility rates — the average number of children per woman.',
     icon: 'baby-carriage',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('SP.DYN.TFRT.IN'),
   }),
   c({
@@ -728,6 +739,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare how crowded each country is.',
     icon: 'users-four',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('EN.POP.DNST'),
   }),
   c({
@@ -741,6 +753,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare how old each country’s population is.',
     icon: 'hourglass-medium',
     entityNoun: 'country',
+    keywords: 'nations world economy',
     recordUrlTemplate: wb('SP.POP.65UP.TO.ZS'),
   }),
 
@@ -757,6 +770,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'mountains',
     featured: true,
     entityNoun: 'peak',
+    keywords: 'volcano volcanoes peaks summit hills altitude',
   }),
   c({
     id: 'geo-rivers',
@@ -770,6 +784,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'waves',
     featured: true,
     entityNoun: 'river',
+    keywords: 'water streams',
   }),
   c({
     id: 'geo-lakes',
@@ -783,6 +798,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'drop',
     featured: true,
     entityNoun: 'lake',
+    keywords: 'water',
   }),
   c({
     id: 'geo-islands',
@@ -796,6 +812,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'island',
     featured: true,
     entityNoun: 'island',
+    keywords: 'sea ocean land',
   }),
   c({
     id: 'geo-waterfalls',
@@ -822,6 +839,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the measured sizes of confirmed exoplanets, relative to Earth.',
     icon: 'planet',
     entityNoun: 'planet',
+    keywords: 'space astronomy',
   }),
   c({
     id: 'space-exo-mass',
@@ -834,6 +852,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the measured masses of confirmed exoplanets.',
     icon: 'planet',
     entityNoun: 'planet',
+    keywords: 'space astronomy',
   }),
   c({
     id: 'space-exo-period',
@@ -846,6 +865,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare how long each exoplanet takes to complete one orbit.',
     icon: 'shooting-star',
     entityNoun: 'planet',
+    keywords: 'space astronomy',
   }),
   c({
     id: 'space-exo-distance',
@@ -858,6 +878,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare how far away each planet-hosting star system is.',
     icon: 'star',
     entityNoun: 'star system',
+    keywords: 'stars space light-years exoplanets',
   }),
   c({
     id: 'science-atomic-number',
@@ -871,6 +892,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'atom',
     featured: true,
     entityNoun: 'element',
+    keywords: 'chemistry periodic table',
   }),
   c({
     id: 'science-atomic-mass',
@@ -883,6 +905,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the standard atomic mass of each element.',
     icon: 'atom',
     entityNoun: 'element',
+    keywords: 'chemistry periodic table',
   }),
   c({
     id: 'science-melting-point',
@@ -895,6 +918,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare element melting points at 1 atmosphere.',
     icon: 'thermometer-hot',
     entityNoun: 'element',
+    keywords: 'chemistry periodic table',
   }),
   c({
     id: 'science-boiling-point',
@@ -907,6 +931,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare element boiling points at 1 atmosphere.',
     icon: 'thermometer',
     entityNoun: 'element',
+    keywords: 'chemistry periodic table',
   }),
   c({
     id: 'science-density',
@@ -919,6 +944,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the density of elements that are solid at room temperature.',
     icon: 'cube',
     entityNoun: 'element',
+    keywords: 'chemistry periodic table',
   }),
 
   // ── Technology & Transport ──────────────────────────────────────────
@@ -933,6 +959,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the elevation of large and medium airports worldwide.',
     icon: 'airplane-tilt',
     entityNoun: 'airport',
+    keywords: 'flights aviation planes',
   }),
   c({
     id: 'transport-runway-length',
@@ -945,6 +972,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the longest open runway at large and medium airports.',
     icon: 'airplane-takeoff',
     entityNoun: 'airport',
+    keywords: 'flights aviation planes',
   }),
   c({
     id: 'transport-bridges',
@@ -958,6 +986,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'path',
     featured: true,
     entityNoun: 'bridge',
+    keywords: 'engineering',
   }),
   c({
     id: 'transport-tunnels',
@@ -970,6 +999,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the length of road and railway tunnels.',
     icon: 'train',
     entityNoun: 'tunnel',
+    keywords: 'rail railway road',
   }),
 
   // ── Animals ─────────────────────────────────────────────────────────
@@ -985,6 +1015,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'paw-print',
     featured: true,
     entityNoun: 'mammal',
+    keywords: 'animals wildlife species',
   }),
   c({
     id: 'animals-bird-mass',
@@ -998,6 +1029,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'bird',
     featured: true,
     entityNoun: 'bird',
+    keywords: 'animals wildlife species',
   }),
   c({
     id: 'animals-reptile-mass',
@@ -1010,6 +1042,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare the average adult body mass of well-known reptiles.',
     icon: 'bug-beetle',
     entityNoun: 'reptile',
+    keywords: 'animals wildlife species',
   }),
   c({
     id: 'animals-longevity',
@@ -1023,6 +1056,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'hourglass',
     featured: true,
     entityNoun: 'animal',
+    keywords: 'animals wildlife species',
   }),
 
   // ── Food & Everyday Life ────────────────────────────────────────────
@@ -1038,6 +1072,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'fire',
     featured: true,
     entityNoun: 'food',
+    keywords: 'nutrition diet calories',
   }),
   c({
     id: 'food-protein',
@@ -1050,6 +1085,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare protein content per 100 g.',
     icon: 'egg',
     entityNoun: 'food',
+    keywords: 'nutrition diet calories',
   }),
   c({
     id: 'food-sugar',
@@ -1063,6 +1099,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'cookie',
     featured: true,
     entityNoun: 'food',
+    keywords: 'nutrition diet calories',
   }),
   c({
     id: 'food-fat',
@@ -1075,6 +1112,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare total fat per 100 g.',
     icon: 'cheese',
     entityNoun: 'food',
+    keywords: 'nutrition diet calories',
   }),
   c({
     id: 'food-fibre',
@@ -1087,6 +1125,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare total dietary fibre per 100 g.',
     icon: 'carrot',
     entityNoun: 'food',
+    keywords: 'nutrition diet calories',
   }),
 
   // ── Buildings & Landmarks ───────────────────────────────────────────
@@ -1102,6 +1141,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'building-office',
     featured: true,
     entityNoun: 'building',
+    keywords: 'towers architecture',
   }),
   c({
     id: 'buildings-skyscraper-floors',
@@ -1114,6 +1154,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     description: 'Compare how many floors skyscrapers have above ground.',
     icon: 'stairs',
     entityNoun: 'building',
+    keywords: 'towers architecture',
   }),
   c({
     id: 'buildings-dams',
@@ -1141,6 +1182,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'soccer-ball',
     featured: true,
     entityNoun: 'venue',
+    keywords: 'arena football soccer sport sports',
   }),
   c({
     id: 'culture-films',
@@ -1154,6 +1196,7 @@ export const COLLECTIONS: CollectionDefinition[] = [
     icon: 'film-slate',
     featured: true,
     entityNoun: 'film',
+    keywords: 'movies cinema minutes',
   }),
 ];
 

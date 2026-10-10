@@ -32,7 +32,9 @@ export function BottomSheet({
     });
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
+        // Handled here only: don't let the game screen also react to it.
         e.preventDefault();
+        e.stopPropagation();
         onClose();
       } else if (e.key === 'Tab' && panel.current) {
         const items = panel.current.querySelectorAll<HTMLElement>(

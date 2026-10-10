@@ -1,12 +1,12 @@
 import { signal } from '@preact/signals';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
-import { dailyInfo, loadError, loadingCollection, randomFeatured, session, startGame, todaysDaily } from '../app/game';
+import { dailyInfo, lastResult, loadError, loadingCollection, randomFeatured, session, startGame, todaysDaily, unseenResult } from '../app/game';
 import { navigate } from '../app/router';
 import { installSheetOpen, openCategory, save, updateSettings } from '../app/store';
 import { Wordmark } from '../components/BrandMark';
 import { CategoryTile } from '../components/CategoryTile';
 import { Icon } from '../components/Icon';
-import { CATALOG, TOTAL_FACTS, type CollectionInfo } from '../data/catalog';
+import { allCollections, TOTAL_FACTS, type CollectionInfo } from '../data/catalog';
 import { GROUPS } from '../data/definitions';
 import type { GroupId } from '../data/schema';
 import { BRAND, DIFFICULTY_LABEL } from '../design/strings';
@@ -33,6 +33,25 @@ function ResumeBanner() {
       </span>
       <span class="resume-cta">
         Resume <Icon name="arrow-right" size={16} />
+      </span>
+    </button>
+  );
+}
+
+function FinishedBanner() {
+  const r = lastResult.value;
+  if (!unseenResult.value || !r) return null;
+  return (
+    <button type="button" class="resume" onClick={() => navigate('results')}>
+      <span class="resume-dot is-done" aria-hidden="true" />
+      <span class="resume-text">
+        <strong>{r.record.mode === 'sprint' ? 'Time’s up on your Sprint' : 'Your game has ended'}</strong>
+        <span>
+          {r.info.title} · {r.info.subtitle} — {r.record.score} correct
+        </span>
+      </span>
+      <span class="resume-cta">
+        Results <Icon name="arrow-right" size={16} />
       </span>
     </button>
   );
@@ -119,7 +138,7 @@ function Modes() {
 }
 
 function matches(info: CollectionInfo, q: string): boolean {
-  const hay = `${info.title} ${info.subtitle} ${info.descriptor} ${info.group.title} ${info.metric.label}`.toLowerCase();
+  const hay = `${info.title} ${info.subtitle} ${info.descriptor} ${info.group.title} ${info.metric.label} ${info.keywords ?? ''}`.toLowerCase();
   return q
     .toLowerCase()
     .split(/\s+/)
@@ -142,7 +161,8 @@ function Browser() {
     }
   }, []);
 
-  const results = useMemo(() => (query.trim() ? CATALOG.filter((c) => matches(c, query)) : []), [query]);
+  const catalog = useMemo(() => allCollections(), []);
+  const results = useMemo(() => (query.trim() ? catalog.filter((c) => matches(c, query)) : []), [query]);
   const groups = GROUPS.filter((g) => group === 'all' || g.id === group);
   const open = (id: string) => (openCategory.value = id);
 
@@ -153,7 +173,7 @@ function Browser() {
           Categories
         </h2>
         <span class="browser-count">
-          {CATALOG.length} categories · {TOTAL_FACTS.toLocaleString('en-GB')} facts
+          {catalog.length} categories · {TOTAL_FACTS.toLocaleString('en-GB')} facts
         </span>
       </div>
       <label class="search">
@@ -205,7 +225,7 @@ function Browser() {
         )
       ) : (
         groups.map((g) => {
-          const items = CATALOG.filter((c) => c.groupId === g.id);
+          const items = catalog.filter((c) => c.groupId === g.id);
           if (items.length === 0) return null;
           const [first, ...rest] = items;
           const showAll = expanded.has(g.id) || group !== 'all';
@@ -261,6 +281,7 @@ export function PlayScreen() {
       </header>
       <p class="tagline">{BRAND.tagline}</p>
       <ResumeBanner />
+      <FinishedBanner />
       {loadError.value && (
         <div class="hint hint-error" role="alert">
           <Icon name="warning-circle" size={22} />

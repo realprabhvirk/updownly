@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks';
-import { lastResult, startGame, todayKey } from '../app/game';
+import { lastResult, startGame, todayKey, unseenResult } from '../app/game';
 import { navigate } from '../app/router';
 import { save, showToast } from '../app/store';
 import { Button } from '../components/Button';
@@ -15,14 +15,19 @@ function appUrl(): string {
   return `${location.origin}${location.pathname}`;
 }
 
-function prettyDate(key: string): string {
+function prettyDate(key: string, withYear = true): string {
   const [y, m, d] = key.split('-').map(Number) as [number, number, number];
-  return new Date(y, m - 1, d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  return new Date(y, m - 1, d).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    ...(withYear ? { year: 'numeric' } : {}),
+  });
 }
 
 export function ResultsScreen() {
   const r = lastResult.value;
   useEffect(() => {
+    unseenResult.value = false;
     if (!r) navigate('play', { replace: true });
   }, [r]);
   const isRecord = Boolean(r && (r.flags.newBestClassic || r.flags.newBestSprint));
@@ -112,7 +117,7 @@ export function ResultsScreen() {
           </div>
           <div>
             <dt>{isDaily ? 'Date' : 'Difficulty'}</dt>
-            <dd>{isDaily ? prettyDate(record.dateKey ?? todayKey()) : DIFFICULTY_LABEL[record.difficulty]}</dd>
+            <dd>{isDaily ? prettyDate(record.dateKey ?? todayKey(), false) : DIFFICULTY_LABEL[record.difficulty]}</dd>
           </div>
         </dl>
 

@@ -3,25 +3,26 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "UPDOWNLY — a higher-or-lower trivia game built on thousands of real, source-backed facts.",
+  "description": "UPDOWNLY \u2014 a higher-or-lower trivia game built on thousands of real, source-backed facts.",
   "engines": {
     "node": ">=20.19"
   },
   "scripts": {
     "dev": "vite",
     "build": "npm run data:validate && tsc -b && vite build",
+    "build:e2e": "vite build --mode e2e",
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
+    "screens": "playwright test --config playwright.screens.config.ts",
     "data:fetch": "tsx scripts/data/fetch.ts",
     "data:build": "tsx scripts/data/build.ts",
     "data:validate": "tsx scripts/data/validate.ts",
     "data:report": "tsx scripts/data/report.ts",
     "data:refresh": "npm run data:fetch && npm run data:build && npm run data:validate && npm run data:report",
     "icons": "tsx scripts/icons.ts",
-    "screens": "playwright test --config playwright.screens.config.ts",
     "check": "npm run typecheck && npm run test && npm run data:validate && npm run build"
   },
   "dependencies": {

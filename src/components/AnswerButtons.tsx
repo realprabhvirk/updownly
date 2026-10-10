@@ -30,9 +30,11 @@ export function AnswerButtons({
           <Icon name="arrow-fat-up-fill" size={26} />
         </span>
         <span class="answer-label">Higher</span>
-        <span class="answer-hint" aria-hidden="true">
-          {higherWord}
-        </span>
+        {higherWord.toLowerCase() !== 'higher' && (
+          <span class="answer-hint" aria-hidden="true">
+            {higherWord}
+          </span>
+        )}
       </button>
       <button
         type="button"
@@ -46,9 +48,11 @@ export function AnswerButtons({
           <Icon name="arrow-fat-down-fill" size={26} />
         </span>
         <span class="answer-label">Lower</span>
-        <span class="answer-hint" aria-hidden="true">
-          {lowerWord}
-        </span>
+        {lowerWord.toLowerCase() !== 'lower' && (
+          <span class="answer-hint" aria-hidden="true">
+            {lowerWord}
+          </span>
+        )}
       </button>
     </div>
   );

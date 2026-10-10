@@ -306,9 +306,22 @@ export async function buildWikidata(log: ExclusionLog): Promise<BuiltCollection[
   return out;
 }
 
+/** Common short forms for Wikidata's formal country labels (display only). */
+const SHORT_COUNTRY: Record<string, string> = {
+  "People's Republic of China": 'China',
+  'United States of America': 'United States',
+  'Kingdom of the Netherlands': 'Netherlands',
+  'Kingdom of Denmark': 'Denmark',
+  'Republic of the Congo': 'Congo',
+  'Democratic Republic of the Congo': 'DR Congo',
+  'Federated States of Micronesia': 'Micronesia',
+  "Democratic People's Republic of Korea": 'North Korea',
+  'State of Palestine': 'Palestine',
+};
+
 function formatCountries(ctx: string): string | undefined {
   if (!ctx) return undefined;
-  const parts = ctx.split('|').filter(Boolean).sort();
+  const parts = [...new Set(ctx.split('|').filter(Boolean).map((p) => SHORT_COUNTRY[p] ?? p))].sort();
   if (parts.length === 0) return undefined;
   if (parts.length > 3) return `${parts.slice(0, 2).join(', ')} +${parts.length - 2}`;
   return parts.join(', ');

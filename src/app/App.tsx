@@ -10,7 +10,8 @@ import { StatsScreen } from '../screens/StatsScreen';
 import { Icon } from '../components/Icon';
 import { announcement } from './announce';
 import { navigate, route, type Route } from './router';
-import { toast, updateReady } from './store';
+import { useEffect } from 'preact/hooks';
+import { installSheetOpen, openCategory, openFactId, toast, updateReady } from './store';
 import { session } from './game';
 
 const TABS: Array<{ route: Route; label: string; icon: string }> = [
@@ -57,6 +58,12 @@ function UpdateBanner() {
 
 export function App() {
   const r = route.value;
+  // Any navigation (including the browser's back button) closes open sheets.
+  useEffect(() => {
+    openCategory.value = null;
+    openFactId.value = null;
+    installSheetOpen.value = false;
+  }, [r]);
   const fullscreen = r === 'game' || r === 'results';
   return (
     <div class={`app${fullscreen ? ' is-fullscreen' : ''}`}>

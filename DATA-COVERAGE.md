@@ -50,10 +50,10 @@ Every observation is one source value for one entity, one metric and one referen
 | Technology & Transport | Airports · Longest runway (`transport-runway-length`) | 3,244 | Current record | OurAirports | 399.9 – 4,999.94 m | 0.006 |
 | Technology & Transport | Bridges · Longest span (`transport-bridges`) | 565 | Current Wikidata record | Wikidata | 20.6 – 2,023 m | 0.003 |
 | Technology & Transport | Tunnels · Length (`transport-tunnels`) | 433 | Current Wikidata record | Wikidata | 0.51 – 53.85 km | 0.000 |
-| Animals | Mammals · Body mass (`animals-mammal-mass`) | 1,124 | Database release, Aug 2015 | Amniote Life-History Database | 1.98 – 1.49e+8 g | 0.000 |
-| Animals | Birds · Body mass (`animals-bird-mass`) | 917 | Database release, Aug 2015 | Amniote Life-History Database | 1.9 – 109,250 g | 0.000 |
-| Animals | Reptiles · Body mass (`animals-reptile-mass`) | 416 | Database release, Aug 2015 | Amniote Life-History Database | 1.19 – 420,000 g | 0.003 |
-| Animals | Animals · Maximum lifespan (`animals-longevity`) | 2,061 | Database release, Aug 2015 | Amniote Life-History Database | 0.5 – 211 years | 0.003 |
+| Animals | Mammals · Body mass (`animals-mammal-mass`) | 1,124 | Aug 2015 release | Amniote Life-History Database | 1.98 – 1.49e+8 g | 0.000 |
+| Animals | Birds · Body mass (`animals-bird-mass`) | 917 | Aug 2015 release | Amniote Life-History Database | 1.9 – 109,250 g | 0.000 |
+| Animals | Reptiles · Body mass (`animals-reptile-mass`) | 416 | Aug 2015 release | Amniote Life-History Database | 1.19 – 420,000 g | 0.003 |
+| Animals | Animals · Maximum lifespan (`animals-longevity`) | 2,061 | Aug 2015 release | Amniote Life-History Database | 0.5 – 211 years | 0.003 |
 | Food & Everyday Life | Foods · Calories (`food-energy`) | 3,941 | SR Legacy (2018) | USDA FoodData Central — SR Legacy | 1 – 902 kcal per 100 g | 0.002 |
 | Food & Everyday Life | Foods · Protein (`food-protein`) | 3,758 | SR Legacy (2018) | USDA FoodData Central — SR Legacy | 0.02 – 88.32 g per 100 g | 0.001 |
 | Food & Everyday Life | Foods · Sugar (`food-sugar`) | 2,098 | SR Legacy (2018) | USDA FoodData Central — SR Legacy | 0.01 – 99.8 g per 100 g | 0.001 |
@@ -62,7 +62,7 @@ Every observation is one source value for one entity, one metric and one referen
 | Buildings & Landmarks | Skyscrapers · Height (`buildings-skyscraper-height`) | 409 | Current Wikidata record | Wikidata | 100 – 828 m | 0.003 |
 | Buildings & Landmarks | Skyscrapers · Floors (`buildings-skyscraper-floors`) | 757 | Current Wikidata record | Wikidata | 10 – 163 floors | 0.019 |
 | Buildings & Landmarks | Dams · Height (`buildings-dams`) | 1,200 | Current Wikidata record | Wikidata | 15 – 214 m | 0.004 |
-| Sport & Culture | Stadiums · Capacity (`culture-stadiums`) | 3,114 | Current Wikidata record | Wikidata | 5,000 – 132,000 capacity | 0.009 |
+| Sport & Culture | Stadiums · Capacity (`culture-stadiums`) | 3,114 | Current Wikidata record | Wikidata | 5,000 – 132,000 spectators | 0.009 |
 | Sport & Culture | Films · Running time (`culture-films`) | 1,760 | Current Wikidata record | Wikidata | 43 – 245 min | 0.013 |
 
 ## Sources and licences
@@ -167,7 +167,7 @@ Every observation is one source value for one entity, one metric and one referen
 | Sugar (`sugar-per-100g`) | g per 100 g | Grams of total sugars per 100 g of the edible portion. | — |
 | Fat (`fat-per-100g`) | g per 100 g | Grams of total fat (total lipid) per 100 g of the edible portion. | — |
 | Fibre (`fibre-per-100g`) | g per 100 g | Grams of total dietary fibre per 100 g of the edible portion. | — |
-| Capacity (`capacity`) | capacity | Maximum spectator capacity as recorded on Wikidata. | Venues with conflicting capacity records, figures for only part of a venue, and demolished venues are excluded. |
+| Capacity (`capacity`) | spectators | Maximum spectator capacity as recorded on Wikidata. | Venues with conflicting capacity records, figures for only part of a venue, and demolished venues are excluded. |
 | Running time (`running-time`) | min | Running time of the film as recorded on Wikidata. | Films with several conflicting running times (for example theatrical and extended cuts) are excluded. |
 
 ## Exclusions

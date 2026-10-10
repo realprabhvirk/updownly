@@ -58,6 +58,10 @@ export default defineConfig(({ mode }) => ({
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,
+        // Control the page as soon as the first install finishes, so offline
+        // play works without a second visit. Updates still wait for the
+        // player (registerType: 'prompt' keeps skipWaiting off).
+        clientsClaim: true,
       },
       devOptions: { enabled: false },
     }),

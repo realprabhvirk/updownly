@@ -113,6 +113,8 @@ export type CollectionDefinition = {
   featured?: boolean;
   /** Short entity noun used in prompts: "mountain", "country"… */
   entityNoun: string;
+  /** Extra search terms for the category browser. */
+  keywords?: string;
 };
 
 /** Compact on-disk row: [entityId, name, value, sourceRecordId, context, note]. */

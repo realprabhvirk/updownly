@@ -206,7 +206,7 @@ function ActiveGame({ s }: { s: Session }) {
   // Keyboard: ↑/H higher, ↓/L lower, Enter/Space continue, Esc exit.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (confirmExit || openFactId.value || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.defaultPrevented || confirmExit || openFactId.value || e.metaKey || e.ctrlKey || e.altKey) return;
       const phase = engine.getState().phase;
       const k = e.key.toLowerCase();
       if (phase === 'question' && (k === 'arrowup' || k === 'h')) {

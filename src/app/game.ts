@@ -37,6 +37,8 @@ export const session = signal<Session | null>(null);
 export const loadingCollection = signal<string | null>(null);
 export const loadError = signal<string | null>(null);
 export const lastResult = signal<ResultSummary | null>(null);
+/** A game finished while the player was on another screen (e.g. Sprint time ran out). */
+export const unseenResult = signal(false);
 
 // ── Deterministic seeds for automated tests (never active in production) ──
 let e2eSeed: number | null = null;
@@ -219,6 +221,7 @@ function onFinished(s: Session, st: GameState): void {
     ...(dailyOut ? { daily: dailyOut } : {}),
   };
   if (route.value === 'game') navigate('results', { replace: true });
+  else unseenResult.value = true;
 }
 
 /** Has today's official Daily Challenge been completed? */
