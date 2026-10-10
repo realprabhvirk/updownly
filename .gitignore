@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-*/
+data/raw/
+data/staged/
+test-results/
+playwright-report/
+blob-report/
+coverage/
+tmp/
+*.log
+.DS_Store
+.vite/
+*.tsbuildinfo

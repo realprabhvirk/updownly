@@ -1,0 +1,132 @@
+/*
+ * UPDOWNLY design tokens — the single source of truth for colour, type,
+ * space and motion. Components use only the semantic tokens.
+ */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('../assets/fonts/bricolage-grotesque-latin-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('../assets/fonts/bricolage-grotesque-latin-ext-opsz-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* ── Core palette ─────────────────────────────── */
+  --c-ink: #101827;
+  --c-cobalt: #3155e8;
+  --c-cobalt-deep: #2442c4;
+  --c-cloud: #f5f6f8;
+  --c-white: #ffffff;
+  --c-mint: #2ea87c;
+  --c-coral: #f16c5b;
+  --c-butter: #f2cf5b;
+  --c-lilac: #a597f5;
+  --c-sky: #91bff0;
+  --c-slate: #596678;
+
+  /* ── Semantic (light) ─────────────────────────── */
+  --bg: var(--c-cloud);
+  --surface: var(--c-white);
+  --surface-2: #eceef2;
+  --surface-3: #e1e5eb;
+  --text: var(--c-ink);
+  --text-2: var(--c-slate);
+  --text-3: #8a94a5;
+  --line: #dde1e8;
+  --accent: var(--c-cobalt);
+  --accent-press: var(--c-cobalt-deep);
+  --on-accent: #ffffff;
+  --strong: var(--c-ink); /* answer buttons, hero blocks */
+  --on-strong: #ffffff;
+  --strong-press: #000000;
+  --correct: var(--c-mint);
+  --incorrect: var(--c-coral);
+  --record: var(--c-butter);
+  --on-colour: var(--c-ink); /* text on any solid category/feedback colour */
+  --focus: #1d4ed8;
+  --scrim: rgb(16 24 39 / 0.45);
+  --shadow-sheet: 0 -1px 0 rgb(16 24 39 / 0.06), 0 -12px 32px rgb(16 24 39 / 0.12);
+
+  /* ── Type ─────────────────────────────────────── */
+  --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-s: 0.875rem;
+  --fs-m: 1rem;
+  --fs-l: 1.1875rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-value: clamp(2.5rem, 12vw, 3.75rem);
+  --fs-hero: clamp(6rem, 34vw, 9.5rem);
+
+  /* ── Space & shape ────────────────────────────── */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --r-s: 10px;
+  --r-m: 16px;
+  --r-l: 24px;
+  --r-xl: 32px;
+  --gutter: 16px;
+  --tap: 44px;
+  --nav-h: 64px;
+  --max-w: 560px;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* ── Motion ───────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --t-fast: 120ms;
+  --t-med: 240ms;
+  --t-slow: 420ms;
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b111c;
+  --surface: #151d2b;
+  --surface-2: #1d2738;
+  --surface-3: #263246;
+  --text: #f2f4f8;
+  --text-2: #a7b1c2;
+  --text-3: #7d889b;
+  --line: #2a3547;
+  --accent: #4d6cf5;
+  --accent-press: #3b5ae6;
+  --on-accent: #ffffff;
+  --strong: #f2f4f8;
+  --on-strong: #101827;
+  --strong-press: #d5dae3;
+  --focus: #93b4ff;
+  --scrim: rgb(0 0 0 / 0.6);
+  --shadow-sheet: 0 -1px 0 rgb(255 255 255 / 0.06), 0 -12px 32px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+
+/* Reduced motion: set by the app from the system setting or Settings. */
+:root[data-motion='reduce'] {
+  --t-fast: 0ms;
+  --t-med: 0ms;
+  --t-slow: 0ms;
+}

@@ -1,0 +1,1313 @@
+{
+ "world-land-area": {
+  "no 2024 value published": {
+   "count": 3,
+   "examples": [
+    "Channel Islands",
+    "Kosovo",
+    "Nicaragua"
+   ]
+  }
+ },
+ "world-gdp": {
+  "no 2025 value published": {
+   "count": 31,
+   "examples": [
+    "Afghanistan",
+    "American Samoa",
+    "Aruba"
+   ]
+  }
+ },
+ "world-gdp-per-capita": {
+  "no 2025 value published": {
+   "count": 31,
+   "examples": [
+    "Afghanistan",
+    "American Samoa",
+    "Aruba"
+   ]
+  }
+ },
+ "world-co2-per-capita": {
+  "below 0.01 t per person (emissions reported elsewhere)": {
+   "count": 8,
+   "examples": [
+    "American Samoa",
+    "Guam",
+    "Marshall Islands"
+   ]
+  },
+  "no 2024 value published": {
+   "count": 14,
+   "examples": [
+    "Andorra",
+    "Channel Islands",
+    "Curacao"
+   ]
+  }
+ },
+ "world-internet": {
+  "no 2024 value published": {
+   "count": 35,
+   "examples": [
+    "American Samoa",
+    "Aruba",
+    "Bermuda"
+   ]
+  }
+ },
+ "world-renewables": {
+  "no 2021 value published": {
+   "count": 5,
+   "examples": [
+    "Channel Islands",
+    "Kosovo",
+    "Monaco"
+   ]
+  }
+ },
+ "world-forest": {
+  "no 2024 value published": {
+   "count": 8,
+   "examples": [
+    "Channel Islands",
+    "Gibraltar",
+    "Hong Kong"
+   ]
+  }
+ },
+ "world-density": {
+  "no 2024 value published": {
+   "count": 3,
+   "examples": [
+    "Channel Islands",
+    "Kosovo",
+    "Nicaragua"
+   ]
+  }
+ },
+ "space-exo-radius": {
+  "calculated from mass–radius relation": {
+   "count": 1537,
+   "examples": [
+    "HD 2039 b",
+    "GJ 674 b",
+    "HD 69830 c"
+   ]
+  },
+  "no radius": {
+   "count": 50,
+   "examples": [
+    "WASP-53 c",
+    "HD 160691 b",
+    "HD 176986 c"
+   ]
+  }
+ },
+ "space-exo-mass": {
+  "mass type is Msini, not true mass": {
+   "count": 895,
+   "examples": [
+    "HD 2039 b",
+    "GJ 674 b",
+    "HD 69830 c"
+   ]
+  },
+  "mass type is M-R relationship, not true mass": {
+   "count": 3032,
+   "examples": [
+    "K2-43 b",
+    "Kepler-1753 b",
+    "Kepler-1176 b"
+   ]
+  },
+  "no mass": {
+   "count": 31,
+   "examples": [
+    "Kepler-723 b",
+    "KOI-217 b",
+    "Kepler-718 b"
+   ]
+  },
+  "mass type is Msin(i)/sin(i), not true mass": {
+   "count": 15,
+   "examples": [
+    "DE CVn b",
+    "HU Aqr AB c",
+    "HU Aqr AB b"
+   ]
+  }
+ },
+ "space-exo-period": {
+  "no orbital period": {
+   "count": 353,
+   "examples": [
+    "2MASS J04414489+2301513 b",
+    "AB Pic b",
+    "CT Cha b"
+   ]
+  }
+ },
+ "space-exo-distance": {
+  "no system distance": {
+   "count": 28,
+   "examples": [
+    "Kepler-1737",
+    "CD-35 2722 B",
+    "Kepler-1964"
+   ]
+  }
+ },
+ "transport-runway-length": {
+  "no open runway with a published length": {
+   "count": 25,
+   "examples": [
+    "Aeroestación Yabotí",
+    "Balimo Airport",
+    "Caye Caulker Airport"
+   ]
+  }
+ },
+ "transport-airport-elevation": {
+  "no published elevation": {
+   "count": 37,
+   "examples": [
+    "Zhaotong Zhaoyang Airport",
+    "Bengbu Tenghu Airport",
+    "Saskylakh Airport"
+   ]
+  }
+ },
+ "food-energy": {
+  "name longer than 60 characters": {
+   "count": 2591,
+   "examples": [
+    "Pillsbury Golden Layer Buttermilk Biscuits, Artificial Flavor, refrigerated dough",
+    "Kraft Foods, Shake N Bake Original Recipe, Coating for Pork, dry",
+    "Pie crust, deep dish, frozen, unbaked, made with enriched flour"
+   ]
+  },
+  "brand-name product": {
+   "count": 448,
+   "examples": [
+    "Candies, ALMOND JOY Candy Bar",
+    "Candies, TWIZZLERS CHERRY BITES",
+    "Candies, NESTLE, BIT-O'-HONEY Candy Chews"
+   ]
+  },
+  "restaurant menu item": {
+   "count": 109,
+   "examples": [
+    "ON THE BORDER, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Mexican, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Latino, chicken and rice, entree, prepared"
+   ]
+  },
+  "baby foods": {
+   "count": 345,
+   "examples": [
+    "Babyfood, apple yogurt dessert, strained",
+    "Babyfood, juice, pear",
+    "Babyfood, meat, beef with vegetables, toddler"
+   ]
+  },
+  "name contains editorial qualifier": {
+   "count": 32,
+   "examples": [
+    "Cinnamon buns, frosted (includes honey buns)",
+    "Crackers, saltines, whole wheat (includes multi-grain)",
+    "Bread, multi-grain (includes whole-grain)"
+   ]
+  },
+  "USDA commodity specification item": {
+   "count": 1,
+   "examples": [
+    "Oats (Includes foods for USDA's Food Distribution Program)"
+   ]
+  },
+  "fast-food menu item": {
+   "count": 312,
+   "examples": [
+    "Fast foods, nachos, with cheese",
+    "Fast foods, nachos, with cheese, beans, ground beef, and tomatoes",
+    "Fast foods, cheeseburger, double, regular patty and bun, with condiments"
+   ]
+  },
+  "zero amount (would make questions one-sided)": {
+   "count": 14,
+   "examples": [
+    "Sweetener, herbal extract powder from Stevia leaf",
+    "Beverages, tea, green, brewed, decaffeinated",
+    "Beverages, tea, green, ready to drink, unsweetened"
+   ]
+  }
+ },
+ "food-protein": {
+  "name longer than 60 characters": {
+   "count": 2591,
+   "examples": [
+    "Pillsbury Golden Layer Buttermilk Biscuits, Artificial Flavor, refrigerated dough",
+    "Kraft Foods, Shake N Bake Original Recipe, Coating for Pork, dry",
+    "Pie crust, deep dish, frozen, unbaked, made with enriched flour"
+   ]
+  },
+  "brand-name product": {
+   "count": 448,
+   "examples": [
+    "Candies, ALMOND JOY Candy Bar",
+    "Candies, TWIZZLERS CHERRY BITES",
+    "Candies, NESTLE, BIT-O'-HONEY Candy Chews"
+   ]
+  },
+  "restaurant menu item": {
+   "count": 109,
+   "examples": [
+    "ON THE BORDER, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Mexican, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Latino, chicken and rice, entree, prepared"
+   ]
+  },
+  "baby foods": {
+   "count": 345,
+   "examples": [
+    "Babyfood, apple yogurt dessert, strained",
+    "Babyfood, juice, pear",
+    "Babyfood, meat, beef with vegetables, toddler"
+   ]
+  },
+  "name contains editorial qualifier": {
+   "count": 32,
+   "examples": [
+    "Cinnamon buns, frosted (includes honey buns)",
+    "Crackers, saltines, whole wheat (includes multi-grain)",
+    "Bread, multi-grain (includes whole-grain)"
+   ]
+  },
+  "USDA commodity specification item": {
+   "count": 1,
+   "examples": [
+    "Oats (Includes foods for USDA's Food Distribution Program)"
+   ]
+  },
+  "fast-food menu item": {
+   "count": 312,
+   "examples": [
+    "Fast foods, nachos, with cheese",
+    "Fast foods, nachos, with cheese, beans, ground beef, and tomatoes",
+    "Fast foods, cheeseburger, double, regular patty and bun, with condiments"
+   ]
+  },
+  "zero amount (would make questions one-sided)": {
+   "count": 197,
+   "examples": [
+    "Syrups, table blends, pancake, with butter",
+    "Tea, tundra, herb and laborador combination (Alaska Native)",
+    "Oil, whale, bowhead (Alaska Native)"
+   ]
+  }
+ },
+ "food-sugar": {
+  "name longer than 60 characters": {
+   "count": 2591,
+   "examples": [
+    "Pillsbury Golden Layer Buttermilk Biscuits, Artificial Flavor, refrigerated dough",
+    "Kraft Foods, Shake N Bake Original Recipe, Coating for Pork, dry",
+    "Pie crust, deep dish, frozen, unbaked, made with enriched flour"
+   ]
+  },
+  "brand-name product": {
+   "count": 448,
+   "examples": [
+    "Candies, ALMOND JOY Candy Bar",
+    "Candies, TWIZZLERS CHERRY BITES",
+    "Candies, NESTLE, BIT-O'-HONEY Candy Chews"
+   ]
+  },
+  "restaurant menu item": {
+   "count": 109,
+   "examples": [
+    "ON THE BORDER, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Mexican, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Latino, chicken and rice, entree, prepared"
+   ]
+  },
+  "baby foods": {
+   "count": 345,
+   "examples": [
+    "Babyfood, apple yogurt dessert, strained",
+    "Babyfood, juice, pear",
+    "Babyfood, meat, beef with vegetables, toddler"
+   ]
+  },
+  "name contains editorial qualifier": {
+   "count": 32,
+   "examples": [
+    "Cinnamon buns, frosted (includes honey buns)",
+    "Crackers, saltines, whole wheat (includes multi-grain)",
+    "Bread, multi-grain (includes whole-grain)"
+   ]
+  },
+  "USDA commodity specification item": {
+   "count": 1,
+   "examples": [
+    "Oats (Includes foods for USDA's Food Distribution Program)"
+   ]
+  },
+  "fast-food menu item": {
+   "count": 312,
+   "examples": [
+    "Fast foods, nachos, with cheese",
+    "Fast foods, nachos, with cheese, beans, ground beef, and tomatoes",
+    "Fast foods, cheeseburger, double, regular patty and bun, with condiments"
+   ]
+  },
+  "nutrient not analysed for this food": {
+   "count": 1148,
+   "examples": [
+    "George Weston Bakeries, Thomas English Muffins",
+    "Tostada shells, corn",
+    "Snacks, corn-based, extruded, chips, barbecue-flavor"
+   ]
+  },
+  "zero amount (would make questions one-sided)": {
+   "count": 709,
+   "examples": [
+    "Baking chocolate, unsweetened, liquid",
+    "Moose, meat, raw (Alaska Native)",
+    "Fish, halibut, raw, with skin (Alaska Native)"
+   ]
+  }
+ },
+ "food-fat": {
+  "name longer than 60 characters": {
+   "count": 2591,
+   "examples": [
+    "Pillsbury Golden Layer Buttermilk Biscuits, Artificial Flavor, refrigerated dough",
+    "Kraft Foods, Shake N Bake Original Recipe, Coating for Pork, dry",
+    "Pie crust, deep dish, frozen, unbaked, made with enriched flour"
+   ]
+  },
+  "brand-name product": {
+   "count": 448,
+   "examples": [
+    "Candies, ALMOND JOY Candy Bar",
+    "Candies, TWIZZLERS CHERRY BITES",
+    "Candies, NESTLE, BIT-O'-HONEY Candy Chews"
+   ]
+  },
+  "restaurant menu item": {
+   "count": 109,
+   "examples": [
+    "ON THE BORDER, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Mexican, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Latino, chicken and rice, entree, prepared"
+   ]
+  },
+  "baby foods": {
+   "count": 345,
+   "examples": [
+    "Babyfood, apple yogurt dessert, strained",
+    "Babyfood, juice, pear",
+    "Babyfood, meat, beef with vegetables, toddler"
+   ]
+  },
+  "name contains editorial qualifier": {
+   "count": 32,
+   "examples": [
+    "Cinnamon buns, frosted (includes honey buns)",
+    "Crackers, saltines, whole wheat (includes multi-grain)",
+    "Bread, multi-grain (includes whole-grain)"
+   ]
+  },
+  "USDA commodity specification item": {
+   "count": 1,
+   "examples": [
+    "Oats (Includes foods for USDA's Food Distribution Program)"
+   ]
+  },
+  "fast-food menu item": {
+   "count": 312,
+   "examples": [
+    "Fast foods, nachos, with cheese",
+    "Fast foods, nachos, with cheese, beans, ground beef, and tomatoes",
+    "Fast foods, cheeseburger, double, regular patty and bun, with condiments"
+   ]
+  },
+  "zero amount (would make questions one-sided)": {
+   "count": 182,
+   "examples": [
+    "Tea, tundra, herb and laborador combination (Alaska Native)",
+    "Pectin, liquid",
+    "Alcoholic beverage, rice (sake)"
+   ]
+  }
+ },
+ "food-fibre": {
+  "name longer than 60 characters": {
+   "count": 2591,
+   "examples": [
+    "Pillsbury Golden Layer Buttermilk Biscuits, Artificial Flavor, refrigerated dough",
+    "Kraft Foods, Shake N Bake Original Recipe, Coating for Pork, dry",
+    "Pie crust, deep dish, frozen, unbaked, made with enriched flour"
+   ]
+  },
+  "brand-name product": {
+   "count": 448,
+   "examples": [
+    "Candies, ALMOND JOY Candy Bar",
+    "Candies, TWIZZLERS CHERRY BITES",
+    "Candies, NESTLE, BIT-O'-HONEY Candy Chews"
+   ]
+  },
+  "restaurant menu item": {
+   "count": 109,
+   "examples": [
+    "ON THE BORDER, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Mexican, soft taco with ground beef, cheese and lettuce",
+    "Restaurant, Latino, chicken and rice, entree, prepared"
+   ]
+  },
+  "baby foods": {
+   "count": 345,
+   "examples": [
+    "Babyfood, apple yogurt dessert, strained",
+    "Babyfood, juice, pear",
+    "Babyfood, meat, beef with vegetables, toddler"
+   ]
+  },
+  "name contains editorial qualifier": {
+   "count": 32,
+   "examples": [
+    "Cinnamon buns, frosted (includes honey buns)",
+    "Crackers, saltines, whole wheat (includes multi-grain)",
+    "Bread, multi-grain (includes whole-grain)"
+   ]
+  },
+  "USDA commodity specification item": {
+   "count": 1,
+   "examples": [
+    "Oats (Includes foods for USDA's Food Distribution Program)"
+   ]
+  },
+  "fast-food menu item": {
+   "count": 312,
+   "examples": [
+    "Fast foods, nachos, with cheese",
+    "Fast foods, nachos, with cheese, beans, ground beef, and tomatoes",
+    "Fast foods, cheeseburger, double, regular patty and bun, with condiments"
+   ]
+  },
+  "nutrient not analysed for this food": {
+   "count": 343,
+   "examples": [
+    "George Weston Bakeries, Thomas English Muffins",
+    "Snacks, trail mix, regular",
+    "Mashu roots, raw (Alaska Native)"
+   ]
+  },
+  "zero amount (would make questions one-sided)": {
+   "count": 1431,
+   "examples": [
+    "Snacks, fruit leather, pieces",
+    "Snacks, fruit leather, rolls",
+    "Candies, confectioner's coating, yogurt"
+   ]
+  }
+ },
+ "science-density": {
+  "not solid at standard conditions": {
+   "count": 13,
+   "examples": [
+    "Hydrogen",
+    "Helium",
+    "Nitrogen"
+   ]
+  },
+  "no published value": {
+   "count": 3,
+   "examples": [
+    "Francium",
+    "Californium",
+    "Einsteinium"
+   ]
+  },
+  "only predicted values (synthetic element)": {
+   "count": 19,
+   "examples": [
+    "Fermium",
+    "Mendelevium",
+    "Nobelium"
+   ]
+  }
+ },
+ "science-melting-point": {
+  "no phase change at 1 atm (sublimes or needs pressure)": {
+   "count": 3,
+   "examples": [
+    "Helium",
+    "Carbon",
+    "Arsenic"
+   ]
+  },
+  "only predicted values (synthetic element)": {
+   "count": 19,
+   "examples": [
+    "Fermium",
+    "Mendelevium",
+    "Nobelium"
+   ]
+  }
+ },
+ "science-boiling-point": {
+  "no phase change at 1 atm (sublimes or needs pressure)": {
+   "count": 3,
+   "examples": [
+    "Helium",
+    "Carbon",
+    "Arsenic"
+   ]
+  },
+  "no published value": {
+   "count": 6,
+   "examples": [
+    "Astatine",
+    "Francium",
+    "Protactinium"
+   ]
+  },
+  "only predicted values (synthetic element)": {
+   "count": 19,
+   "examples": [
+    "Fermium",
+    "Mendelevium",
+    "Nobelium"
+   ]
+  }
+ },
+ "animals-bird-mass": {
+  "fewer than 40 Wikipedia language editions": {
+   "count": 8795,
+   "examples": [
+    "Accipiter albogularis",
+    "Accipiter bicolor",
+    "Accipiter brachyurus"
+   ]
+  },
+  "no common name": {
+   "count": 80,
+   "examples": [
+    "Aegypius occipitalis",
+    "Aquila ayresii",
+    "Leucopternis occidentalis"
+   ]
+  },
+  "no adult body mass recorded": {
+   "count": 10,
+   "examples": [
+    "Sterna aurantia",
+    "Anastomus oscitans",
+    "Leptoptilos dubius"
+   ]
+  }
+ },
+ "animals-longevity": {
+  "fewer than 40 Wikipedia language editions": {
+   "count": 8795,
+   "examples": [
+    "Accipiter albogularis",
+    "Accipiter bicolor",
+    "Accipiter brachyurus"
+   ]
+  },
+  "no common name": {
+   "count": 1682,
+   "examples": [
+    "Aegypius occipitalis",
+    "Aquila ayresii",
+    "Leucopternis occidentalis"
+   ]
+  },
+  "fewer than 30 Wikipedia language editions": {
+   "count": 3811,
+   "examples": [
+    "Amblysomus corriae",
+    "Amblysomus hottentotus",
+    "Amblysomus marleyi"
+   ]
+  },
+  "fewer than 20 Wikipedia language editions": {
+   "count": 4426,
+   "examples": [
+    "Acanthocercus adramitanus",
+    "Acanthocercus annectens",
+    "Acanthocercus cyanogaster"
+   ]
+  },
+  "no maximum longevity recorded": {
+   "count": 538,
+   "examples": [
+    "Accipiter badius",
+    "Accipiter brevipes",
+    "Aviceda leuphotes"
+   ]
+  },
+  "outside plausible range": {
+   "count": 3,
+   "examples": [
+    "Eupleres goudotii",
+    "Diplogale hosei",
+    "Lepus nigricollis"
+   ]
+  }
+ },
+ "animals-mammal-mass": {
+  "fewer than 30 Wikipedia language editions": {
+   "count": 3811,
+   "examples": [
+    "Amblysomus corriae",
+    "Amblysomus hottentotus",
+    "Amblysomus marleyi"
+   ]
+  },
+  "no common name": {
+   "count": 1,
+   "examples": [
+    "Drymoreomys albimaculatus"
+   ]
+  },
+  "no adult body mass recorded": {
+   "count": 15,
+   "examples": [
+    "Leopardus guigna",
+    "Neovison macrodon",
+    "Viverra megaspila"
+   ]
+  },
+  "common name shared by several species": {
+   "count": 2,
+   "examples": [
+    "Nycticebus bengalensis",
+    "Nycticebus coucang"
+   ]
+  }
+ },
+ "animals-reptile-mass": {
+  "fewer than 20 Wikipedia language editions": {
+   "count": 4426,
+   "examples": [
+    "Acanthocercus adramitanus",
+    "Acanthocercus annectens",
+    "Acanthocercus cyanogaster"
+   ]
+  },
+  "no common name": {
+   "count": 1601,
+   "examples": [
+    "Acanthocercus yemensis",
+    "Acanthosaura nataliae",
+    "Agama africana"
+   ]
+  },
+  "no adult body mass recorded": {
+   "count": 120,
+   "examples": [
+    "Acanthosaura armata",
+    "Hydrosaurus amboinensis",
+    "Hydrosaurus pustulatus"
+   ]
+  },
+  "common name shared by several species": {
+   "count": 4,
+   "examples": [
+    "Acrantophis madagascariensis",
+    "Sanzinia madagascariensis",
+    "Indotestudo forstenii"
+   ]
+  }
+ },
+ "geo-mountains": {
+  "fewer than 10 Wikipedia sitelinks": {
+   "count": 17581,
+   "examples": [
+    "Q1000564 Schützeberg",
+    "Q100527571 Sakurayama",
+    "Q1010277 Buer Berg"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 885,
+   "examples": [
+    "Q1018840 Volcán Bárcena",
+    "Q1020272 Búrfell",
+    "Q102079702 Říp Mountain"
+   ]
+  },
+  "conflicting statements": {
+   "count": 70,
+   "examples": [
+    "Q1036938 Mount Yoshino",
+    "Q1053413 Karangetang",
+    "Q1058950 Fourpeaked Mountain"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 10,
+   "examples": [
+    "Q1143757 Cumbre Vieja",
+    "Q1192560 Mount Tarawera",
+    "Q13360737 Koli"
+   ]
+  },
+  "unsupported unit": {
+   "count": 1,
+   "examples": [
+    "Q40976 Mount Bandahara"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 37,
+   "examples": [
+    "Mount Heng",
+    "Schaufelspitze",
+    "Wheeler Peak"
+   ]
+  }
+ },
+ "geo-rivers": {
+  "fewer than 12 Wikipedia sitelinks": {
+   "count": 10483,
+   "examples": [
+    "Q1000169 Little Murray River",
+    "Q1000673 Varzina",
+    "Q1000787 King River"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 1230,
+   "examples": [
+    "Q1018675 Bystrzyca",
+    "Q1019526 Bílina",
+    "Q1025074 Cadagua"
+   ]
+  },
+  "conflicting statements": {
+   "count": 45,
+   "examples": [
+    "Q1099574 Clearwater River",
+    "Q1124056 Concord River",
+    "Q1430710 Paluxy River"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 2,
+   "examples": [
+    "Q1226044 Näätämöjoki",
+    "Q643284 Chicago River"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 70,
+   "examples": [
+    "River Dee",
+    "Salado River",
+    "Osuga"
+   ]
+  }
+ },
+ "geo-lakes": {
+  "outside plausible range for collection": {
+   "count": 742,
+   "examples": [
+    "Q1004552 Bullowsee",
+    "Q1015634 Burgsee",
+    "Q1020737 Bültsee"
+   ]
+  },
+  "fewer than 5 Wikipedia sitelinks": {
+   "count": 819,
+   "examples": [
+    "Q100947585 Lake Rotokawau",
+    "Q101445624 Lake Fifteen",
+    "Q1031742 Lake Hiawatha"
+   ]
+  },
+  "conflicting statements": {
+   "count": 38,
+   "examples": [
+    "Q10917022 Jilantai Salt lake",
+    "Q1129358 Lake Lesina",
+    "Q1146737 Runn"
+   ]
+  },
+  "excluded type (unbuilt, prehistoric or adult content)": {
+   "count": 3,
+   "examples": [
+    "Q1412494 Lake Ptolemy",
+    "Q2406225 Juyan Lake",
+    "Q27941676 Lake Tauca"
+   ]
+  },
+  "unsupported unit": {
+   "count": 3,
+   "examples": [
+    "Q18325295 Vesankajärvi",
+    "Q683053 Lake Kompienga",
+    "Q895359 Bovilla reservoir"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 7,
+   "examples": [
+    "Q22366529 Larder Lake",
+    "Q2351689 Stony Lake",
+    "Q24196571 Glenbeg Lough"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 48,
+   "examples": [
+    "Buffalo Lake",
+    "Alvajärvi",
+    "Kivijärvi"
+   ]
+  }
+ },
+ "geo-islands": {
+  "outside plausible range for collection": {
+   "count": 704,
+   "examples": [
+    "Q1005307 Northeast Cay",
+    "Q1005345 Nanshan Island",
+    "Q1026700 Saint Croix Island"
+   ]
+  },
+  "fewer than 8 Wikipedia sitelinks": {
+   "count": 1884,
+   "examples": [
+    "Q1005318 Flat Island",
+    "Q1005341 Namyit Island",
+    "Q100605687 Oranjestad Reef Islands"
+   ]
+  },
+  "conflicting statements": {
+   "count": 109,
+   "examples": [
+    "Q1048813 Weh Island",
+    "Q1075589 Sebuku Island",
+    "Q107640 Komodo Island"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 6,
+   "examples": [
+    "Q12776486 South Island",
+    "Q1674272 Isle of Noss",
+    "Q1721920 New Kalabsha"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 45,
+   "examples": [
+    "Scalpay",
+    "Mainland",
+    "Inishbofin"
+   ]
+  }
+ },
+ "geo-waterfalls": {
+  "no usable whole-entity statement": {
+   "count": 18,
+   "examples": [
+    "Q1074827 Chishimba Falls",
+    "Q2887443 Bassin Bleu",
+    "Q2940854 Sakaleona Falls"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 9,
+   "examples": [
+    "Q11008122 Malanda Falls",
+    "Q136803926 Buckley Falls",
+    "Q16959664 Denmark Strait cataract"
+   ]
+  },
+  "conflicting statements": {
+   "count": 14,
+   "examples": [
+    "Q12864530 Wongalee Falls",
+    "Q20436919 Tangle Falls",
+    "Q2090895 Peričnik Falls"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 2,
+   "examples": [
+    "Chaudière Falls",
+    "Chaudière Falls"
+   ]
+  }
+ },
+ "buildings-skyscraper-height": {
+  "no evidence of completion (opening date or in-use state)": {
+   "count": 636,
+   "examples": [
+    "Q100258244 Central Bank of Iraq Tower",
+    "Q100307841 Tianshan Gate of the World Plots 27 and 28",
+    "Q102317008 Eurovea Tower"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 5,
+   "examples": [
+    "Q1050074 28 Liberty Street",
+    "Q1096141 Act Tower",
+    "Q1344856 Place Ville Marie"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 17,
+   "examples": [
+    "Q1050882 Cathedral Plaza Bucharest",
+    "Q1066676 Plaza Hotel",
+    "Q1109555 San José City Hall"
+   ]
+  },
+  "excluded type (unbuilt, prehistoric or adult content)": {
+   "count": 10,
+   "examples": [
+    "Q107552561 A2A Tower",
+    "Q119942 X-Seed 4000",
+    "Q130618769 Paramount Tower"
+   ]
+  },
+  "demolished or dissolved": {
+   "count": 22,
+   "examples": [
+    "Q1093955 City Investing Building",
+    "Q1339307 Empire Landmark Hotel",
+    "Q1353503 Sparkasse Hagen office tower"
+   ]
+  },
+  "conflicting statements": {
+   "count": 9,
+   "examples": [
+    "Q11274 Chrysler Building",
+    "Q1810949 NBC Tower",
+    "Q25818749 Enbridge Centre"
+   ]
+  },
+  "missing English label": {
+   "count": 1,
+   "examples": [
+    "Q15661493 Q22"
+   ]
+  },
+  "height and floor count inconsistent or uncorroborated": {
+   "count": 2,
+   "examples": [
+    "Q2897303 Marganit Tower",
+    "Q745016 Kuala Lumpur Tower"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 4,
+   "examples": [
+    "Trump International Hotel and Tower",
+    "Aon Center",
+    "Trump International Hotel and Tower"
+   ]
+  }
+ },
+ "buildings-skyscraper-floors": {
+  "no evidence of completion (opening date or in-use state)": {
+   "count": 1436,
+   "examples": [
+    "Q1001988 Buffalo City Hall",
+    "Q100258244 Central Bank of Iraq Tower",
+    "Q100307841 Tianshan Gate of the World Plots 27 and 28"
+   ]
+  },
+  "fewer than 3 Wikipedia sitelinks": {
+   "count": 283,
+   "examples": [
+    "Q106002354 Huide Tower",
+    "Q109233772 The Spine, Liverpool",
+    "Q11078418 Tuntex Highrise Building"
+   ]
+  },
+  "demolished or dissolved": {
+   "count": 34,
+   "examples": [
+    "Q1093955 City Investing Building",
+    "Q1339307 Empire Landmark Hotel",
+    "Q1353503 Sparkasse Hagen office tower"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 3,
+   "examples": [
+    "Q1138183 Philadelphia City Hall",
+    "Q1278419 Toronto Eaton Centre",
+    "Q48989184 Caramuru Building"
+   ]
+  },
+  "conflicting statements": {
+   "count": 9,
+   "examples": [
+    "Q1343055 Swissôtel The Stamford",
+    "Q1372014 HSBC Building",
+    "Q18111159 China Resources Tower"
+   ]
+  },
+  "unsupported unit": {
+   "count": 1,
+   "examples": [
+    "Q1351208 4 World Trade Center"
+   ]
+  },
+  "excluded type (unbuilt, prehistoric or adult content)": {
+   "count": 10,
+   "examples": [
+    "Q16974640 Eliel Saarinen's Tribune Tower design",
+    "Q17640070 Tour Hekla",
+    "Q18589922 Chengdu Greenland Tower"
+   ]
+  },
+  "height and floor count inconsistent or uncorroborated": {
+   "count": 3,
+   "examples": [
+    "Q2897303 Marganit Tower",
+    "Q6150039 Torre BBVA Mexico",
+    "Q745016 Kuala Lumpur Tower"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 11,
+   "examples": [
+    "Trump International Hotel and Tower",
+    "Wells Fargo Center",
+    "Aon Center"
+   ]
+  }
+ },
+ "buildings-dams": {
+  "outside plausible range for collection": {
+   "count": 23,
+   "examples": [
+    "Q1009342 Potchefstroom Dam",
+    "Q10955981 Vaal Barrage",
+    "Q15040654 Barrage Mékinac"
+   ]
+  },
+  "fewer than 3 Wikipedia sitelinks": {
+   "count": 666,
+   "examples": [
+    "Q105226862 Kolar Dam",
+    "Q107033620 Los Campitos Reservoir",
+    "Q107618676 Moozhiyar Dam"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 3,
+   "examples": [
+    "Q11401426 Hokuzan Dam",
+    "Q62343601 Evretou Dam",
+    "Q62511184 Kouris Dam"
+   ]
+  },
+  "demolished or dissolved": {
+   "count": 1,
+   "examples": [
+    "Q119210467 Kakhovka Dam"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 60,
+   "examples": [
+    "Komori Dam",
+    "Ochiai Dam",
+    "Matsuo Dam"
+   ]
+  }
+ },
+ "transport-bridges": {
+  "outside plausible range for collection": {
+   "count": 18,
+   "examples": [
+    "Q1079373 Richmond Bridge",
+    "Q12001508 Sluppen Bridge",
+    "Q12056807 Stádlec Suspension Bridge"
+   ]
+  },
+  "conflicting statements": {
+   "count": 4,
+   "examples": [
+    "Q11785801 Libeň Bridge",
+    "Q27979272 Swindell Bridge",
+    "Q827735 King Fahd Causeway"
+   ]
+  },
+  "demolished or dissolved": {
+   "count": 6,
+   "examples": [
+    "Q12038735 Franz Joseph Bridge",
+    "Q125841 Tappan Zee Bridge",
+    "Q136763862 Hongqi Bridge"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 3,
+   "examples": [
+    "Q14629163 Ma'anshan Yangtze River Bridge",
+    "Q17569381 Craigmin Bridge",
+    "Q83125 Tower Bridge"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 2,
+   "examples": [
+    "Little Belt Bridge",
+    "Little Belt Bridge"
+   ]
+  }
+ },
+ "transport-tunnels": {
+  "no usable whole-entity statement": {
+   "count": 7,
+   "examples": [
+    "Q11492437 Enasan Tunnel",
+    "Q15972411 Kanmon Railway Tunnel",
+    "Q240079 Sveti Rok Tunnel"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 30,
+   "examples": [
+    "Q11543709 Tarusawa Tunnel",
+    "Q1190691 Thames Tunnel",
+    "Q13024251 Pang Tup Khop Tunnel"
+   ]
+  },
+  "demolished or dissolved": {
+   "count": 2,
+   "examples": [
+    "Q11571420 Shin-Karikachi Tunnel",
+    "Q15210944 Clifton Hall Tunnel"
+   ]
+  },
+  "conflicting statements": {
+   "count": 2,
+   "examples": [
+    "Q3318219 Moffat Tunnel",
+    "Q6549180 Limehouse Link tunnel"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 2,
+   "examples": [
+    "Karawanks Tunnel",
+    "Karawanks Tunnel"
+   ]
+  }
+ },
+ "culture-stadiums": {
+  "outside plausible range for collection": {
+   "count": 399,
+   "examples": [
+    "Q100957628 Arena Wiener Neustadt",
+    "Q1029895 Estadio El Collao",
+    "Q1040156 Carl Ramos Stadium"
+   ]
+  },
+  "demolished or dissolved": {
+   "count": 232,
+   "examples": [
+    "Q1010594 Stadio Partenopeo",
+    "Q1016967 Bursa Atatürk Stadium",
+    "Q1017286 Busch Memorial Stadium"
+   ]
+  },
+  "fewer than 5 Wikipedia sitelinks": {
+   "count": 2867,
+   "examples": [
+    "Q101312951 Al Fayhaa Stadium",
+    "Q10276739 Estádio Alfredo de Castilho",
+    "Q10276788 Estádio Aníbal Torres Costa"
+   ]
+  },
+  "conflicting statements": {
+   "count": 60,
+   "examples": [
+    "Q1029941 Camp Randall Stadium",
+    "Q1067235 GelreDome",
+    "Q1128263 Stade Gabriel Montpied"
+   ]
+  },
+  "unsupported unit": {
+   "count": 34,
+   "examples": [
+    "Q107997314 UMMC Arena",
+    "Q11862534 Hietalahti baseball stadium",
+    "Q12279167 Arena Arda"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 11,
+   "examples": [
+    "Q1102186 Saab Arena",
+    "Q1165409 Hitachi Energy Arena",
+    "Q1186333 Lusail Stadium"
+   ]
+  },
+  "indistinguishable from another entity (same name and context)": {
+   "count": 70,
+   "examples": [
+    "Estádio Presidente Vargas",
+    "Daugava Stadium",
+    "Spartak Stadium"
+   ]
+  }
+ },
+ "culture-films": {
+  "fewer than 40 Wikipedia sitelinks": {
+   "count": 83260,
+   "examples": [
+    "Q1000094 You're Dead",
+    "Q1000174 Tinko",
+    "Q1000394 This Modern Age"
+   ]
+  },
+  "conflicting statements": {
+   "count": 118,
+   "examples": [
+    "Q102448 Harry Potter and the Prisoner of Azkaban",
+    "Q105359456 Ant-Man and the Wasp: Quantumania",
+    "Q105387 Independence Day"
+   ]
+  },
+  "outside plausible range for collection": {
+   "count": 2,
+   "examples": [
+    "Q124697 1900",
+    "Q845176 War and Peace"
+   ]
+  },
+  "no usable whole-entity statement": {
+   "count": 15,
+   "examples": [
+    "Q127367 The Lord of the Rings: The Fellowship of the Ring",
+    "Q131074 The Lord of the Rings: The Return of the King",
+    "Q14772351 Batman v Superman: Dawn of Justice"
+   ]
+  },
+  "excluded type (unbuilt, prehistoric or adult content)": {
+   "count": 3,
+   "examples": [
+    "Q217685 Caligula",
+    "Q300552 A Serbian Film",
+    "Q506013 Deep Throat"
+   ]
+  }
+ }
+}

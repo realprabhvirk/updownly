@@ -1,0 +1,440 @@
+{
+  "generatedAt": "2026-10-10",
+  "dataVersion": "2026.10.1",
+  "totalFacts": 68481,
+  "totalEntities": 41278,
+  "collections": [
+    {
+      "id": "world-population",
+      "count": 217,
+      "periodKey": "2025",
+      "periodLabel": "2025",
+      "min": 9492,
+      "max": 1463865525
+    },
+    {
+      "id": "world-gdp",
+      "count": 186,
+      "periodKey": "2025",
+      "periodLabel": "2025",
+      "min": 57345434.7234984,
+      "max": 30769700000000
+    },
+    {
+      "id": "world-gdp-per-capita",
+      "count": 186,
+      "periodKey": "2025",
+      "periodLabel": "2025",
+      "min": 233.823013385395,
+      "max": 147252.179121515
+    },
+    {
+      "id": "world-land-area",
+      "count": 214,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 2.084,
+      "max": 16376870
+    },
+    {
+      "id": "world-life-expectancy",
+      "count": 217,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 54.635,
+      "max": 86.497
+    },
+    {
+      "id": "world-co2-per-capita",
+      "count": 195,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 0.0384333821376281,
+      "max": 82.8426109070359
+    },
+    {
+      "id": "world-internet",
+      "count": 182,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 8.595999718,
+      "max": 100
+    },
+    {
+      "id": "world-urban",
+      "count": 217,
+      "periodKey": "2025",
+      "periodLabel": "2025",
+      "min": 14.6298998993293,
+      "max": 100
+    },
+    {
+      "id": "world-renewables",
+      "count": 212,
+      "periodKey": "2021",
+      "periodLabel": "2021",
+      "min": 0,
+      "max": 96.3
+    },
+    {
+      "id": "world-forest",
+      "count": 209,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 0.000535998382259428,
+      "max": 92.0684736091298
+    },
+    {
+      "id": "world-fertility",
+      "count": 217,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 0.582,
+      "max": 6.028
+    },
+    {
+      "id": "world-density",
+      "count": 214,
+      "periodKey": "2024",
+      "periodLabel": "2024",
+      "min": 0.13847274570044,
+      "max": 20630.6306306306
+    },
+    {
+      "id": "world-over-65",
+      "count": 217,
+      "periodKey": "2025",
+      "periodLabel": "2025",
+      "min": 1.70081503237359,
+      "max": 36.0110586578337
+    },
+    {
+      "id": "geo-mountains",
+      "count": 4089,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 1000,
+      "max": 8848.86
+    },
+    {
+      "id": "geo-rivers",
+      "count": 2796,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 100,
+      "max": 6300
+    },
+    {
+      "id": "geo-lakes",
+      "count": 2209,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 1,
+      "max": 386400
+    },
+    {
+      "id": "geo-islands",
+      "count": 2714,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 1,
+      "max": 2130800
+    },
+    {
+      "id": "geo-waterfalls",
+      "count": 266,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 6,
+      "max": 979
+    },
+    {
+      "id": "space-exo-radius",
+      "count": 4858,
+      "periodKey": "current",
+      "periodLabel": "Archive snapshot",
+      "min": 0.3098,
+      "max": 87.20586985
+    },
+    {
+      "id": "space-exo-mass",
+      "count": 2472,
+      "periodKey": "current",
+      "periodLabel": "Archive snapshot",
+      "min": 0.02,
+      "max": 9534.85221
+    },
+    {
+      "id": "space-exo-period",
+      "count": 6092,
+      "periodKey": "current",
+      "periodLabel": "Archive snapshot",
+      "min": 0.090706293,
+      "max": 402000000
+    },
+    {
+      "id": "space-exo-distance",
+      "count": 4814,
+      "periodKey": "current",
+      "periodLabel": "Archive snapshot",
+      "min": 4.2439142,
+      "max": 27723.292
+    },
+    {
+      "id": "science-atomic-number",
+      "count": 118,
+      "periodKey": "current",
+      "periodLabel": "Standard reference values",
+      "min": 1,
+      "max": 118
+    },
+    {
+      "id": "science-atomic-mass",
+      "count": 118,
+      "periodKey": "current",
+      "periodLabel": "Standard reference values",
+      "min": 1.008,
+      "max": 295.216
+    },
+    {
+      "id": "science-melting-point",
+      "count": 96,
+      "periodKey": "current",
+      "periodLabel": "Standard reference values",
+      "min": -259.34,
+      "max": 3421.85
+    },
+    {
+      "id": "science-boiling-point",
+      "count": 90,
+      "periodKey": "current",
+      "periodLabel": "Standard reference values",
+      "min": -252.87,
+      "max": 5595.85
+    },
+    {
+      "id": "science-density",
+      "count": 83,
+      "periodKey": "current",
+      "periodLabel": "Standard reference values",
+      "min": 0.53,
+      "max": 22.57
+    },
+    {
+      "id": "transport-airport-elevation",
+      "count": 3232,
+      "periodKey": "current",
+      "periodLabel": "Current record",
+      "min": -21.95,
+      "max": 4411.07
+    },
+    {
+      "id": "transport-runway-length",
+      "count": 3244,
+      "periodKey": "current",
+      "periodLabel": "Current record",
+      "min": 399.9,
+      "max": 4999.94
+    },
+    {
+      "id": "transport-bridges",
+      "count": 565,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 20.6,
+      "max": 2023
+    },
+    {
+      "id": "transport-tunnels",
+      "count": 433,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 0.51,
+      "max": 53.85
+    },
+    {
+      "id": "animals-mammal-mass",
+      "count": 1124,
+      "periodKey": "aug-2015",
+      "periodLabel": "Aug 2015 release",
+      "min": 1.98,
+      "max": 149000000
+    },
+    {
+      "id": "animals-bird-mass",
+      "count": 917,
+      "periodKey": "aug-2015",
+      "periodLabel": "Aug 2015 release",
+      "min": 1.9,
+      "max": 109250
+    },
+    {
+      "id": "animals-reptile-mass",
+      "count": 416,
+      "periodKey": "aug-2015",
+      "periodLabel": "Aug 2015 release",
+      "min": 1.19,
+      "max": 420000
+    },
+    {
+      "id": "animals-longevity",
+      "count": 2061,
+      "periodKey": "aug-2015",
+      "periodLabel": "Aug 2015 release",
+      "min": 0.5,
+      "max": 211
+    },
+    {
+      "id": "food-energy",
+      "count": 3941,
+      "periodKey": "sr-legacy-2018",
+      "periodLabel": "SR Legacy (2018)",
+      "min": 1,
+      "max": 902
+    },
+    {
+      "id": "food-protein",
+      "count": 3758,
+      "periodKey": "sr-legacy-2018",
+      "periodLabel": "SR Legacy (2018)",
+      "min": 0.02,
+      "max": 88.32
+    },
+    {
+      "id": "food-sugar",
+      "count": 2098,
+      "periodKey": "sr-legacy-2018",
+      "periodLabel": "SR Legacy (2018)",
+      "min": 0.01,
+      "max": 99.8
+    },
+    {
+      "id": "food-fat",
+      "count": 3773,
+      "periodKey": "sr-legacy-2018",
+      "periodLabel": "SR Legacy (2018)",
+      "min": 0.01,
+      "max": 100
+    },
+    {
+      "id": "food-fibre",
+      "count": 2181,
+      "periodKey": "sr-legacy-2018",
+      "periodLabel": "SR Legacy (2018)",
+      "min": 0.1,
+      "max": 79
+    },
+    {
+      "id": "buildings-skyscraper-height",
+      "count": 409,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 100,
+      "max": 828
+    },
+    {
+      "id": "buildings-skyscraper-floors",
+      "count": 757,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 10,
+      "max": 163
+    },
+    {
+      "id": "buildings-dams",
+      "count": 1200,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 15,
+      "max": 214
+    },
+    {
+      "id": "culture-stadiums",
+      "count": 3114,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 5000,
+      "max": 132000
+    },
+    {
+      "id": "culture-films",
+      "count": 1760,
+      "periodKey": "current",
+      "periodLabel": "Current Wikidata record",
+      "min": 43,
+      "max": 245
+    }
+  ],
+  "sources": [
+    {
+      "id": "worldbank-wdi",
+      "name": "World Bank — World Development Indicators",
+      "url": "https://datacatalog.worldbank.org/search/dataset/0037712",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "World Bank, World Development Indicators. Licensed under CC BY 4.0.",
+      "retrievedAt": "2026-10-10"
+    },
+    {
+      "id": "nasa-exoplanet-archive",
+      "name": "NASA Exoplanet Archive — Planetary Systems Composite Parameters",
+      "url": "https://exoplanetarchive.ipac.caltech.edu/",
+      "licence": "Public domain",
+      "licenceUrl": "https://exoplanetarchive.ipac.caltech.edu/docs/acknowledge.html",
+      "attribution": "This research has made use of the NASA Exoplanet Archive, which is operated by the California Institute of Technology, under contract with the National Aeronautics and Space Administration under the Exoplanet Exploration Program.",
+      "recordUrlTemplate": "https://exoplanetarchive.ipac.caltech.edu/overview/{id}",
+      "retrievedAt": "2026-10-10"
+    },
+    {
+      "id": "ourairports",
+      "name": "OurAirports",
+      "url": "https://ourairports.com/data/",
+      "licence": "Public domain",
+      "licenceUrl": "https://ourairports.com/data/",
+      "attribution": "Airport data from OurAirports, released to the public domain.",
+      "recordUrlTemplate": "https://ourairports.com/airports/{id}/",
+      "retrievedAt": "2026-10-10"
+    },
+    {
+      "id": "usda-fdc-sr-legacy",
+      "name": "USDA FoodData Central — SR Legacy",
+      "url": "https://fdc.nal.usda.gov/",
+      "licence": "CC0 1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "U.S. Department of Agriculture, Agricultural Research Service. FoodData Central: SR Legacy (2018). fdc.nal.usda.gov.",
+      "recordUrlTemplate": "https://fdc.nal.usda.gov/food-details/{id}/nutrients",
+      "datasetVersion": "SR Legacy, April 2018",
+      "retrievedAt": "2026-10-10"
+    },
+    {
+      "id": "wikidata",
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org/",
+      "licence": "CC0 1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "Structured data from Wikidata, available under CC0. Queried via the QLever Wikidata endpoint.",
+      "recordUrlTemplate": "https://www.wikidata.org/wiki/{id}",
+      "retrievedAt": "2026-10-10"
+    },
+    {
+      "id": "amniote-database",
+      "name": "Amniote Life-History Database",
+      "url": "https://doi.org/10.6084/m9.figshare.3563457.v1",
+      "licence": "CC0 1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "Myhrvold, N. P., et al. (2015). An amniote life-history database to perform comparative analyses with birds, mammals, and reptiles. Ecology 96:3109. Ecological Archives E096-269.",
+      "datasetVersion": "August 2015",
+      "retrievedAt": "2026-10-10"
+    },
+    {
+      "id": "pubchem-periodic-table",
+      "name": "PubChem Periodic Table (NCBI / NLM)",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/periodic-table/",
+      "licence": "Public domain",
+      "licenceUrl": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+      "attribution": "Kim S, et al. PubChem. National Center for Biotechnology Information, U.S. National Library of Medicine. Periodic table data compiled by PubChem from IUPAC, NIST and CRC sources.",
+      "recordUrlTemplate": "https://pubchem.ncbi.nlm.nih.gov/element/{id}",
+      "retrievedAt": "2026-10-10"
+    }
+  ]
+}
