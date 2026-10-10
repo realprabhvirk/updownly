@@ -2,6 +2,7 @@ import { CategorySheet } from '../screens/CategorySheet';
 import { FactSheet } from '../screens/FactSheet';
 import { GameScreen } from '../screens/GameScreen';
 import { InstallSheet } from '../screens/InstallSheet';
+import { FactsScreen } from '../screens/FactsScreen';
 import { PlayScreen } from '../screens/PlayScreen';
 import { ResultsScreen } from '../screens/ResultsScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
@@ -16,6 +17,7 @@ import { session } from './game';
 
 const TABS: Array<{ route: Route; label: string; icon: string }> = [
   { route: 'play', label: 'Play', icon: 'play' },
+  { route: 'facts', label: 'Facts', icon: 'lightbulb' },
   { route: 'stats', label: 'Stats', icon: 'chart-bar' },
   { route: 'settings', label: 'Settings', icon: 'gear' },
 ];
@@ -71,6 +73,7 @@ export function App() {
         <>
           <main class="screen" id="main">
             {r === 'play' && <PlayScreen />}
+            {r === 'facts' && <FactsScreen />}
             {r === 'stats' && <StatsScreen />}
             {r === 'settings' && <SettingsScreen />}
             {r === 'sources' && <SourcesScreen />}

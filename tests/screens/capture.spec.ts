@@ -122,6 +122,12 @@ for (const vp of VIEWPORTS) {
         await shot('install-help');
         await page.goto(`${APP}#/settings/sources`);
         await shot('data-sources');
+        await page.goto(`${APP}#/facts`);
+        await expect(page.getByTestId('fact-of-the-day')).toContainText(/No\. \d+/);
+        await shot('facts');
+        await page.getByRole('button', { name: /^Countries: Population\./ }).click();
+        await expect(page.locator('.rank-row').first()).toBeVisible();
+        await shot('facts-ranking');
       }
       await page.goto(`${APP}#/settings`);
       await shot('settings');

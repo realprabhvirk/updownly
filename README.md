@@ -6,6 +6,7 @@ UPDOWNLY is an offline-first trivia game for iPhone (installable as a Home Scree
 
 - **68,481 source-backed facts** in **45 categories** across **8 groups**, from 7 openly licensed public datasets (World Bank, NASA Exoplanet Archive, OurAirports, USDA FoodData Central, Wikidata, the Amniote Life-History Database and PubChem). See [DATA-COVERAGE.md](DATA-COVERAGE.md).
 - **Three modes:** Classic (one miss ends the run), 60-Second Sprint, and a deterministic Daily Challenge of ten questions.
+- **Facts** tab: browse the record holders of every category (top 50, plus bottom 20 where the low end is a real record), with a daily featured fact and a detail sheet with sources. Same bundled data, works offline.
 - **Easy / Normal / Hard** difficulty, defined on percentile ranks within each comparison pool.
 - **Private by design:** no accounts, no backend, no analytics, no ads, no network calls during play. Stats live in `localStorage` on the device.
 

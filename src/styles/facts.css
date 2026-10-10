@@ -1,0 +1,233 @@
+/* Facts section. Uses the shared design tokens only. */
+
+/* Fact of the day */
+.fotd {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  background: var(--cat);
+  color: var(--on-colour);
+  border-radius: var(--r-l);
+  padding: var(--s-5);
+  margin-bottom: var(--s-5);
+  transition: transform var(--t-fast) var(--ease-out);
+}
+.fotd:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.fotd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.fotd-rank {
+  font-size: var(--fs-s);
+  font-weight: 600;
+  opacity: 0.8;
+  margin-top: var(--s-2);
+}
+.fotd-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.625rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+.fotd-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 11vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-top: var(--s-1);
+}
+.fotd-value small,
+.rank-value small {
+  font-size: 0.45em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  opacity: 0.75;
+}
+.fotd-ctx {
+  font-size: var(--fs-s);
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+/* Collection list */
+.facts-group {
+  margin-bottom: var(--s-5);
+}
+.facts-list {
+  background: var(--surface);
+  border-radius: var(--r-m);
+  overflow: hidden;
+}
+.facts-list li + li {
+  border-top: 1px solid var(--line);
+}
+.facts-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: 60px;
+  padding: var(--s-2) var(--s-4);
+  text-align: left;
+}
+.facts-row:active {
+  background: var(--surface-2);
+}
+.facts-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: var(--tile);
+  color: var(--on-colour);
+  flex: none;
+}
+.facts-text {
+  flex: 1;
+  display: grid;
+  min-width: 0;
+  font-size: var(--fs-s);
+}
+.facts-text span {
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.facts-count {
+  color: var(--text-3);
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+/* Ranking */
+.rank-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin: var(--s-2) 0 var(--s-3);
+}
+.rank-desc {
+  color: var(--text-2);
+  font-size: var(--fs-s);
+  margin-bottom: var(--s-4);
+}
+.rank-period {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+}
+.rank-note {
+  font-size: var(--fs-s);
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--surface);
+  border-radius: var(--r-m);
+  padding: var(--s-3) var(--s-4);
+}
+.rank-loading {
+  color: var(--text-2);
+  padding: var(--s-6) 0;
+  text-align: center;
+}
+.rank-list {
+  margin-top: var(--s-4);
+  background: var(--surface);
+  border-radius: var(--r-l);
+  overflow: hidden;
+}
+.rank-list li + li {
+  border-top: 1px solid var(--line);
+}
+.rank-row {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: 64px;
+  padding: var(--s-3) var(--s-4) var(--s-3) var(--s-3);
+  text-align: left;
+}
+.rank-row:active {
+  background: var(--surface-2);
+}
+.rank-n {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: var(--text-3);
+  text-align: center;
+}
+.is-podium .rank-n {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--cat);
+  color: var(--on-colour);
+}
+.rank-main {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.rank-name {
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.is-podium .rank-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.0625rem;
+}
+.rank-ctx {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rank-bar {
+  display: block;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+  margin-top: 4px;
+}
+.rank-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--cat);
+  transform-origin: left center;
+}
+.rank-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  text-align: right;
+  white-space: nowrap;
+}

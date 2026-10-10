@@ -13,7 +13,7 @@ const UI = [
   'caret-down', 'caret-up', 'lock-simple', 'sun', 'moon', 'device-mobile', 'speaker-high', 'speaker-slash', 'vibrate',
   'arrow-counter-clockwise', 'trash', 'export', 'plus-square', 'sparkle', 'medal', 'shuffle', 'crown', 'compass',
   'hand-tap', 'arrow-square-out', 'x-circle', 'check-circle', 'book-open', 'shield-check', 'warning-circle',
-  'arrows-clockwise', 'squares-four', 'cloud-slash', 'list', 'circle-half',
+  'arrows-clockwise', 'squares-four', 'cloud-slash', 'list', 'circle-half', 'lightbulb', 'ranking',
 ];
 const FILL = ['arrow-fat-up', 'arrow-fat-down'];
 

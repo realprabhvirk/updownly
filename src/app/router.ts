@@ -4,10 +4,11 @@
  */
 import { signal } from '@preact/signals';
 
-export type Route = 'play' | 'stats' | 'settings' | 'sources' | 'game' | 'results';
+export type Route = 'play' | 'facts' | 'stats' | 'settings' | 'sources' | 'game' | 'results';
 
 const PATHS: Record<Route, string> = {
   play: '#/play',
+  facts: '#/facts',
   stats: '#/stats',
   settings: '#/settings',
   sources: '#/settings/sources',
