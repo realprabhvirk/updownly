@@ -1,0 +1,1519 @@
+# UPDOWNLY — Complete Build Specification for Claude Code
+
+**App name:** UPDOWNLY
+
+**Tagline:** Higher or lower. How far can you go?
+
+**App concept:** An addictive, premium-feeling iOS PWA trivia game where players compare real-world numerical facts, predict whether the next value is higher or lower, and build their longest streak.
+
+**Brand voice:** Confident, playful, concise and intelligent. Never childish or overly corporate.
+
+**Branding rules:**
+- Use `UPDOWNLY` consistently across the app, manifest, Home Screen title, documentation and branding assets.
+- Use `updownly` for package names, storage prefixes and the default repository slug.
+- Use the tagline only where it adds value. Do not repeat it on every screen.
+- Create a distinctive upward/downward brand mark using simple geometric shapes and solid colours.
+- Do not use the generic phrase “UP OR DOWN” as the app's main wordmark.
+- Keep all previous functional requirements, fact-database requirements, game modes, design rules, testing and deployment requirements unchanged.
+- Update every reference to the previous application name throughout the complete specification.
+
+I tried my best to keep it UPDOWNLY, but if anything below confuses you to say up and down, just ignore that. The app name is UPDOWNLY. 
+
+# UPDOWNLY — Complete Build Specification for Claude Code
+
+You are building **UPDOWNLY**, a premium-feeling, installable iOS PWA trivia game built around one addictive question:
+
+**Is the next number higher or lower?**
+
+This is a new application built from scratch. It is not a reskin of another game. Use the design principles, engineering discipline, iOS polish, offline-first architecture and attention to detail described in this brief to deliver a genuinely finished product.
+
+The game should feel like a small, carefully designed App Store game, not a website squeezed onto an iPhone.
+
+The core gameplay is simple enough for anyone to understand within five seconds. The depth comes from its thousands of real facts, dozens of categories, increasingly difficult comparisons, personal records and replayability.
+
+**Do not stop at a plan, mock-up or basic prototype. Build the working application, populate the data, test the game and polish the finished experience.**
+
+Do not ask me questions. Make sensible decisions, document significant choices in `DECISIONS.md` and keep working until the definition of done is satisfied.
+
+---
+
+# 1. The product
+
+## 1.1 App identity
+
+**Name:** UP OR DOWN
+
+**Tagline:** One guess. One more round.
+
+**Category:** Trivia / Casual Games
+
+**Primary platform:** iOS Safari installed to the Home Screen as a PWA.
+
+**Secondary platforms:** Android Chrome and desktop browsers.
+
+The app is an offline-first, single-player trivia game. No account or internet connection should be required for normal gameplay after installation and the initial load.
+
+The user selects a category, sees a known fact, and must predict whether the next fact has a higher or lower numerical value.
+
+Example:
+
+**CURRENT FACT**
+
+Mount Everest
+
+8,849 metres
+
+**NEXT FACT**
+
+K2
+
+???? metres
+
+The player selects one of two large buttons:
+
+`HIGHER ↑` or `LOWER ↓`
+
+The next value is revealed with a satisfying animation. If correct, the player earns a point and continues. If incorrect, the round ends in Classic mode.
+
+The newly revealed item becomes the reference for the next comparison.
+
+Other examples:
+
+- Australia has a population of approximately 27 million. Is Canada's population higher or lower?
+- A building is 828 metres tall. Is the next building taller or shorter?
+- A planet has an orbital period of 365 days. Does the next planet take more or fewer days to complete an orbit?
+- A particular animal weighs 80 kg. Does the next animal weigh more or less?
+- A country has a particular GDP. Does the next country's GDP exceed it?
+
+These are illustrative examples. The actual numbers displayed must come from the verified bundled database.
+
+The core interaction must always be immediately understandable, visually obvious and satisfying.
+
+## 1.2 Product principles
+
+1. Simple enough to play immediately.
+2. Thousands of real, source-backed facts.
+3. Categories that make finding interesting comparisons easy.
+4. Gameplay that remains enjoyable after hundreds of rounds.
+5. No fabricated statistics, meaningless comparisons or misleading units.
+6. Designed for an iPhone first.
+7. Completely functional offline after the first successful load.
+8. Visually distinctive, with a carefully art-directed interface.
+9. Fast interactions, clear feedback and minimal friction.
+10. No unnecessary complexity, accounts, subscriptions or backend infrastructure in version one.
+
+Do not add unrelated productivity features, chat, social feeds, AI-generated trivia or unnecessary settings.
+
+---
+
+# 2. Non-negotiable technical requirements
+
+## 2.1 Technology stack
+
+Use:
+
+- Vite 7
+- TypeScript in strict mode
+- Preact 10
+- `@preact/signals` for reactive state
+- `vite-plugin-pwa` for installation and offline caching
+- Vitest for unit tests
+- Playwright for end-to-end tests
+- CSS with a deliberate, handcrafted design system
+- Locally bundled fonts, icons and assets
+
+Keep dependencies small. Do not use a large component framework or a generic UI kit.
+
+Do not use Next.js or introduce a server when a static application is sufficient.
+
+## 2.2 Static, private and offline-first
+
+The app must have:
+
+- No backend.
+- No database server.
+- No authentication.
+- No account creation.
+- No analytics or tracking.
+- No advertising SDKs.
+- No remote API calls during normal gameplay.
+- No CDN dependencies at runtime.
+- No requirement for a network connection to access the included facts.
+- No collection of personal information.
+
+All game state and statistics live locally on the device.
+
+Wrap every `localStorage` access in safe error handling. The app must still render and allow temporary gameplay if storage is unavailable.
+
+External sources may be accessed by development scripts when building or refreshing the factual dataset. These scripts must not run during ordinary gameplay.
+
+The shipped application must contain its actual playable data. A website that displays thousands of items from an online API is not acceptable.
+
+## 2.3 Deployment
+
+Configure the application for GitHub Pages, including repository subpaths such as:
+
+`https://username.github.io/up-or-down/`
+
+Every internal asset, manifest reference, service-worker registration and navigation path must respect Vite's configured base path.
+
+The application must also work at a domain root.
+
+Use relative paths where appropriate. Never hardcode the assumption that the app is hosted at `/`.
+
+## 2.4 Persistence
+
+Persist locally:
+
+- Total rounds played.
+- Best Classic score.
+- Best streak.
+- Best score per category.
+- Daily challenge results and streak.
+- Personal achievements.
+- Recent games.
+- Sound and haptic preferences.
+- Theme preference.
+- Category preferences.
+
+Do not store enormous historical gameplay logs unnecessarily. Limit recent game history to a reasonable number of records.
+
+Provide a clear, deliberate reset option in Settings.
+
+---
+
+# 3. Branding and visual direction
+
+The app should look like an original, premium mobile game designed by someone who understands iOS.
+
+It should be bold, playful, confident and clean without looking childish.
+
+Think strong typography, large numbers, distinctive category colours, thoughtfully designed controls and excellent spacing.
+
+**The interface itself should look good enough that someone would want to keep it on their Home Screen.**
+
+## 3.1 Visual rules
+
+Do not use:
+
+- Neon colours or glow effects.
+- Glassmorphism.
+- Blurred gradient blobs.
+- Galaxy, cyberpunk or aurora themes.
+- Gradient text.
+- Excessive shadows.
+- Emoji as interface icons.
+- AI-generated UI artwork.
+- Generic centred-hero landing pages.
+- Rounded cards for absolutely everything.
+- Generic template-looking dashboards.
+- Gratuitous animation.
+- Fake browser chrome inside the application.
+
+Use solid colour fields and a restrained, coherent design system.
+
+Use rounded corners where they serve a purpose. Avoid making every element a floating pill or oversized card.
+
+Create a layout with visual rhythm. Different sections should have their own hierarchy instead of placing every element inside an identical white rectangle.
+
+## 3.2 Core palette
+
+Use this as the initial palette and tune it after rendering screenshots.
+
+| Token | Hex | Purpose |
+|---|---|---|
+| Ink | `#101827` | Primary text and dark surfaces |
+| Cobalt | `#3155E8` | Brand accent and primary actions |
+| Cloud | `#F5F6F8` | Light-mode background |
+| White | `#FFFFFF` | Main light surfaces |
+| Mint | `#2EA87C` | Correct answer feedback |
+| Coral | `#F16C5B` | Incorrect answer feedback |
+| Butter | `#F2CF5B` | Streaks, highlights and records |
+| Lilac | `#A597F5` | Category accent |
+| Sky | `#91BFF0` | Secondary accent |
+| Slate | `#596678` | Secondary text |
+
+Also define a dark theme with a deep ink background, slightly lighter surfaces, readable near-white text and suitable accent colours.
+
+Category tiles may use additional carefully chosen solid colours. Category colours are decorative identifiers; do not rely on colour alone to communicate information.
+
+Correct and incorrect feedback must be distinguishable through text and iconography as well as colour.
+
+Document all colour tokens in one source of truth.
+
+## 3.3 Typography
+
+Use a strong, expressive display typeface for:
+
+- The UP OR DOWN wordmark.
+- The most important numbers.
+- Category titles.
+- Game results.
+- Streaks and scores.
+
+Choose a self-hosted, properly licensed display font such as Archivo Black or Bricolage Grotesque after comparing how it looks at actual mobile sizes.
+
+Use the native system font stack for ordinary interface elements.
+
+Never use Inter as a lazy default for the whole product.
+
+Numerical values must have stable alignment. Prefer tabular numerals for scores, timers and large values.
+
+Check long names, large numbers, scientific notation and multi-line titles carefully. Nothing should clip or overflow.
+
+## 3.4 Icons
+
+Use locally bundled SVG icons from a consistent, properly licensed icon library, such as Phosphor with a consistent weight.
+
+Do not mix unrelated icon styles.
+
+The brand mark should be a simple vector composition incorporating upward and downward directional shapes. Create the master SVG by hand.
+
+Generate:
+
+- A 1024 × 1024 app icon master.
+- Standard 192 × 192 and 512 × 512 PWA icons.
+- A maskable icon.
+- An Apple touch icon.
+- A favicon.
+- Appropriate browser and install metadata.
+
+The icon should remain recognisable at approximately 60 pixels. No small text, gradients or excessive detail.
+
+---
+
+# 4. Application structure and screens
+
+Build a complete application, not merely a game screen.
+
+Use a simple bottom navigation bar with three primary destinations:
+
+**Play · Stats · Settings**
+
+The navigation must respect iOS safe areas.
+
+Full-screen game and result flows sit above the normal application shell.
+
+## 4.1 Play screen
+
+This is the main landing screen.
+
+At the top:
+
+- UP OR DOWN wordmark.
+- A short, restrained tagline.
+- A compact summary of the current best streak or daily result.
+
+Below that, show the primary game modes:
+
+1. Quick Play
+2. Daily Challenge
+3. 60-Second Sprint
+
+Below the modes, display the category browser.
+
+Organise categories into visually distinct groups such as:
+
+- The World
+- Geography and Nature
+- Space and Science
+- Technology and Transport
+- Animals
+- Food and Everyday Life
+- Buildings and Landmarks
+- Sport and Culture
+
+Use category tiles of varying sizes and visual importance rather than a monotonous grid.
+
+A category tile should contain a local vector icon, its title, a short descriptor and, where useful, the number of comparable facts included.
+
+Examples:
+
+**Countries · Population**
+
+Compare populations from the same reference year.
+
+**Mountains · Elevation**
+
+Compare the world's highest peaks.
+
+**Space · Exoplanets**
+
+Compare measured planetary properties.
+
+The precise categories and their availability must come from the actual bundled dataset. Never display a category as playable if it has no valid comparison pool.
+
+Provide search or simple category filtering once the number of categories makes it useful.
+
+Avoid making users scroll through hundreds of cards to find a game.
+
+## 4.2 Category selection
+
+When a player selects a category, open a well-designed bottom sheet or detail screen.
+
+Include:
+
+- Category title.
+- Short description.
+- A concise explanation of the statistic being compared.
+- Data period or reference year where applicable.
+- The number of usable facts.
+- The source of the data.
+- Difficulty selection.
+- Start button.
+
+Difficulty options:
+
+**Easy** — comparisons with a greater difference between the two values.
+
+**Normal** — a balanced selection of comparisons.
+
+**Hard** — comparisons with more similar values.
+
+Implement difficulty based on the actual numerical distribution or percentile ranks within the relevant comparison group. Do not choose difficulty using arbitrary labels alone.
+
+For each category, use only comparisons where the player is comparing the same measurement with compatible units and the same reference period.
+
+The setup screen should not overwhelm the player with technical details.
+
+## 4.3 Pre-game screen
+
+Keep the start flow short.
+
+Show:
+
+- Selected category.
+- Selected mode.
+- Selected difficulty.
+- A brief instruction if it is the player's first game.
+- A prominent Start button.
+
+Remember reasonable local preferences.
+
+Do not force a lengthy onboarding sequence.
+
+A user should be able to open the app and reach a playable round within a few taps.
+
+---
+
+# 5. Core gameplay
+
+This is the most important part of the application. Prioritise its clarity and reliability.
+
+## 5.1 Game screen
+
+Design the main game around portrait iPhone use. It should not require landscape rotation.
+
+The screen contains:
+
+**Top area**
+
+- Exit button.
+- Category indicator.
+- Current score or question progress.
+- A compact streak indicator where appropriate.
+
+**Reference fact**
+
+Show the known item in a large, visually distinct area.
+
+For example:
+
+MOUNT EVEREST
+
+8,849 m
+
+**Comparison prompt**
+
+Show the next item's name, optional locally available category artwork and the hidden value.
+
+For example:
+
+K2
+
+? m
+
+**Question**
+
+"Will it be higher or lower?"
+
+**Answer controls**
+
+Two large buttons:
+
+`↑ HIGHER`
+
+`↓ LOWER`
+
+These controls must be comfortable to tap with one hand, with hit targets of at least 44 × 44 points and preferably substantially larger for the primary answers.
+
+Use clear pressed states and subtle physical-feeling interaction feedback.
+
+The important information should be readable at arm's length. The value, the item name and the answer buttons must dominate the visual hierarchy.
+
+Avoid distracting decorative elements during an active question.
+
+## 5.2 Answer reveal
+
+When the player answers:
+
+1. Register the answer exactly once.
+2. Reveal the actual value.
+3. Clearly show whether the guess was correct.
+4. Present the correct direction.
+5. Add satisfying visual, sound and optional haptic feedback.
+6. Update the score and streak.
+7. Let the player continue.
+
+A correct answer should feel rewarding without a long animation blocking the next round.
+
+A wrong answer should be clear without being obnoxious.
+
+Prefer fast, well-timed transitions over elaborate animations.
+
+Respect `prefers-reduced-motion`.
+
+Allow the player to tap Continue to proceed after the reveal. Do not rush them through important information.
+
+Do not change the displayed fact halfway through an animation or accidentally count one answer twice.
+
+## 5.3 Facts and explanation
+
+Whenever practical, reveal the value in a useful display format.
+
+Examples include:
+
+- `27.2 million people`
+- `8,849 metres`
+- `$3.2 trillion`
+- `365.25 days`
+
+Formatting must come from metric-specific formatting rules. Do not simply add commas or abbreviate every number in the same way.
+
+Show the unit with the value.
+
+Where relevant, show the reference year or measurement period.
+
+Include a discreet information control that can open a fact detail sheet containing:
+
+- Full value.
+- Unit.
+- Reference period.
+- Source name.
+- Source link when available.
+- A short methodology or qualification note when necessary.
+
+Do not write invented explanations for numerical facts.
+
+## 5.4 Comparison rules
+
+These are mandatory.
+
+- Both items must use the same metric.
+- Their units must be compatible.
+- Their reference periods and measurement scope must match.
+- Unknown values must never be silently treated as zero.
+- Invalid or missing values must never enter the gameplay queue.
+- Equal values must not produce an ambiguous Higher/Lower question. Skip the pair or choose another challenger.
+- Do not show a value before the player submits an answer.
+- Do not accidentally leak the next answer through labels, ordering or accessibility text.
+- Each answer can score only once.
+- A player must never compare the population of one country with the GDP of another.
+- Any data conversion must be explicit and covered by tests.
+- If two different source methodologies make a comparison misleading, exclude the pair.
+
+Build the game around well-defined comparison pools rather than choosing two random database records and hoping they are compatible.
+
+## 5.5 Queue and repeat prevention
+
+Build a dedicated, tested game engine.
+
+The active question sequence should avoid repeated items for as long as possible.
+
+Do not repeat the same comparison endlessly because of a bug in the selection algorithm.
+
+The current reference item becomes the newly revealed challenger after a correct answer.
+
+Choose the next challenger from the same eligible comparison pool, excluding the current reference and any immediate duplicate.
+
+When the usable sequence is exhausted, reshuffle or explain that the session's eligible comparisons have been exhausted. Do not enter an infinite loop.
+
+Maintain clean separation between game logic, fact selection, scoring and UI.
+
+## 5.6 Classic mode
+
+Classic is the default game mode.
+
+- One category per game.
+- One correct answer earns one point.
+- Correct answers increase the current streak.
+- One incorrect answer ends the round.
+- The final result displays the score.
+- A new personal best is celebrated appropriately.
+- Leaving a round early must not create a fake record.
+
+Include a Replay button and an option to switch categories.
+
+## 5.7 60-Second Sprint
+
+An optional timed mode.
+
+- A 60-second countdown begins with the first question.
+- Each correct answer adds to the score.
+- Incorrect answers do not score.
+- The round continues after a wrong answer, so players can keep competing against the clock.
+- The timer must use a monotonic time source where possible and must not gain time from tab suspension.
+- Backgrounding the app must not silently pause a competitive clock and give the player free time.
+- When the time expires, stop accepting answers and show the results screen.
+
+Use a visually clear final-ten-seconds state. Do not make the timer so animated that it distracts the player.
+
+## 5.8 Daily Challenge
+
+Create one Daily Challenge per local calendar date.
+
+Each daily challenge contains ten comparisons.
+
+Requirements:
+
+- Select a specific category and sequence deterministically from the date and a versioned seed.
+- Keep the sequence the same for that date within the app's supported data version.
+- Work offline.
+- Do not require an account or an online leaderboard.
+- Save the result locally.
+- Track completion and consecutive-day participation.
+- Prevent an ordinary replay from overwriting the best daily result.
+- Let the user practise again without misrepresenting the practice score as the official daily result.
+
+Document that a fully offline application cannot guarantee a global leaderboard, central anti-cheat protection or cross-device synchronisation.
+
+If the data changes in a future release, version the daily challenge algorithm so changes are intentional.
+
+## 5.9 Results screen
+
+The results screen should be one of the strongest screens in the app.
+
+For example:
+
+**18**
+
+CORRECT ANSWERS
+
+Best streak: 12
+
+New personal best
+
+Include:
+
+- Final score.
+- Accuracy where it is meaningful.
+- Best streak.
+- Category.
+- Mode.
+- A clean new-record treatment when applicable.
+- Replay.
+- Change category.
+- Return to Play.
+
+For the Daily Challenge, also show completion and local streak information.
+
+Support sharing a concise score summary using the native share sheet where available, with a copy-to-clipboard fallback.
+
+Sharing must not include personal information or expose the user's entire game history.
+
+Do not embed advertisements, fake leaderboards or made-up global rankings.
+
+---
+
+# 6. The fact database — a major product requirement
+
+The content library is not a secondary task. It is one of the core reasons to use the game.
+
+A polished UI with a few dozen facts is not a completed product.
+
+## 6.1 Required volume
+
+The shipped application must contain:
+
+- **At least 10,000 distinct, source-backed numeric fact observations.**
+- At least 20 playable category or subcategory collections.
+- At least six broad category groups.
+- Multiple independent public data sources.
+- Enough valid entities in each published collection to support repeated rounds without immediate repetition.
+
+Target approximately 20,000–50,000 valid observations if the available open datasets support it without compromising data quality.
+
+These figures refer to distinct, traceable entity/metric/period observations, not automatically generated combinations, duplicated rows, spelling variations or fabricated facts.
+
+An observation is a fact such as:
+
+`Australia + total population + 2023 + source-backed value`
+
+A repeated copy of that observation is not another fact.
+
+If the data requirement is not satisfied, do not claim that it is. Continue building the ingestion and validation pipeline, document the actual count and identify exactly what remains incomplete.
+
+## 6.2 Source-backed facts only
+
+Never invent data to satisfy the required record count.
+
+Never ask a language model to generate thousands of numbers from memory.
+
+Never create realistic-looking but fictional statistics and present them as real.
+
+Use public, structured datasets with redistribution rights compatible with bundling them in the application.
+
+Potential source families include:
+
+- World Bank Open Data and World Development Indicators for country-level statistics.
+- NASA's public astronomical datasets and the NASA Exoplanet Archive for space-related measurements.
+- Wikidata structured data for suitably verifiable geographical and physical facts.
+- OurAirports or comparable openly licensed aviation datasets for airport characteristics.
+- Public government statistical datasets.
+- Other reliable, clearly licensed datasets where numeric values can be validated.
+
+Verify the current terms, licences and attribution requirements of every dataset before using it.
+
+Do not assume that a dataset is reusable simply because it is accessible through a public URL.
+
+Where a dataset has a required attribution or share-alike condition, honour it. Do not bundle restricted commercial data or scrape an arbitrary website without checking its terms.
+
+Use build-time import scripts to download or process approved datasets. The resulting validated data must be bundled locally so the app can function offline.
+
+If a source is unavailable, use another reliable source. Do not fabricate substitute records.
+
+## 6.3 Category ideas
+
+Build a rich browser, with category groups and specific playable comparisons.
+
+Use these as candidate collections, selecting only those for which sufficiently good data is available.
+
+### The World
+
+- Countries by population.
+- Countries by land area.
+- Countries by total GDP.
+- Countries by GDP per capita.
+- Countries by life expectancy.
+- Countries by CO₂ emissions per capita.
+- Countries by internet usage.
+- Countries by urban population share.
+- Countries by renewable energy share.
+- Countries by forest area.
+
+Country statistics should use consistent years and clearly identified units.
+
+For historical datasets, a comparison pool may be selected from a year with sufficient comparable observations. Display that year and keep it fixed throughout the session.
+
+### Geography
+
+- Mountain elevation.
+- River length.
+- Lake surface area.
+- Island area.
+- Waterfall height.
+- City population, where a consistent source and reference period are available.
+
+### Space
+
+- Exoplanet radius.
+- Exoplanet mass.
+- Orbital period.
+- Distance from Earth or host star, with the reference definition made explicit.
+- Other measured planetary properties where reliable comparable records exist.
+
+Do not manufacture data for planets or astronomical bodies whose properties are unknown.
+
+### Animals and nature
+
+- Body mass.
+- Maximum documented speed.
+- Lifespan, where a consistent definition and reliable data source exist.
+- Wingspan or body length.
+
+Clearly distinguish average, maximum, recorded and estimated measurements. Do not mix these values in one pool.
+
+### Science
+
+- Element atomic number.
+- Atomic mass.
+- Melting point.
+- Boiling point.
+- Density.
+
+Use accepted scientific references and consistent conditions for physical properties.
+
+For example, a melting-point pool must not silently compare measurements under incompatible pressure conditions.
+
+### Buildings and landmarks
+
+- Building height.
+- Number of floors.
+- Other well-defined physical dimensions.
+
+Use documented measurement conventions. Do not mix roof heights and architectural heights without making the distinction clear.
+
+### Transport
+
+- Airport elevation.
+- Runway length.
+- Vehicle horsepower or maximum speed where consistent, openly licensed structured data is available.
+- Aircraft characteristics when measurement definitions match.
+
+### Food
+
+- Calories or energy per 100 g.
+- Sugar per 100 g.
+- Protein per 100 g.
+- Other clearly defined nutritional quantities.
+
+Only include comparable foods and measurements, and use datasets with compatible serving bases and appropriate redistribution rights.
+
+### Other collections
+
+Sporting venues, science records, landmarks and other interesting numeric comparisons can be included when trustworthy data is available.
+
+The category list is not permission to pad the app with poor data. A smaller collection of excellent facts is preferable to a larger collection of misleading facts. However, the minimum database and collection targets remain acceptance criteria.
+
+## 6.4 Data collection strategy
+
+Do not manually write thousands of objects in source code.
+
+Create a reproducible pipeline that:
+
+1. Acquires data from approved sources.
+2. Parses the original formats.
+3. Normalises names, identifiers and units.
+4. Applies each source's required attribution.
+5. Records provenance and reference periods.
+6. Rejects invalid or ambiguous observations.
+7. Groups facts into compatible comparison pools.
+8. Generates the compact application datasets.
+9. Produces a data coverage report.
+10. Runs validation before the application build.
+
+A clean checkout must build successfully without a live network connection. Network access should only be required when deliberately refreshing source data.
+
+Keep raw downloads, generated files and application-ready data separate. Respect source licences when committing and redistributing files.
+
+## 6.5 Dataset schema
+
+Create a strongly typed data model. Use a structure equivalent to:
+
+```ts
+type Fact = {
+  id: string;
+  entityId: string;
+  entityName: string;
+
+  categoryId: string;
+  metricId: string;
+  comparisonGroupId: string;
+
+  value: number;
+  unit: string;
+
+  periodKey: string;
+  periodLabel: string;
+
+  sourceId: string;
+  sourceRecordId?: string;
+  sourceUrl?: string;
+
+  displayName?: string;
+  note?: string;
+};
+
+type MetricDefinition = {
+  id: string;
+  label: string;
+  unit: string;
+  format: string;
+  comparisonDescription: string;
+  methodologyNote?: string;
+};
+
+type FactSource = {
+  id: string;
+  name: string;
+  url: string;
+  licence: string;
+  attribution?: string;
+  retrievedAt: string;
+  datasetVersion?: string;
+};
+```
+
+Adapt the schema where necessary, but preserve its central principles.
+
+The `comparisonGroupId` must identify observations that can legitimately be compared.
+
+Where a metric is historical, its comparison group must account for the reference period. A historical population record must not be compared with a different year's population record just because both have the same unit.
+
+Every published fact must be traceable to its source.
+
+Use stable entity and fact identifiers. Do not use array positions as persistent IDs.
+
+Store display information separately from numeric values. Formatting a number must never alter the value used for comparison.
+
+## 6.6 Dataset validation and coverage report
+
+Implement a script such as `npm run data:validate`.
+
+It must detect:
+
+- Missing or invalid IDs.
+- Duplicate entity/metric/period observations.
+- Empty entity names.
+- Missing source references.
+- Unknown category or metric IDs.
+- Non-finite numeric values.
+- Invalid units.
+- Incorrectly formatted periods.
+- Invalid conversions.
+- Incompatible comparison groups.
+- Unsupported licences.
+- Empty or unusable collections.
+- Equality-heavy collections that do not provide enough meaningful comparisons.
+- Obvious outliers where source data allows range validation.
+- Data pools with too few comparable entities.
+
+Do not automatically delete suspicious data without documenting the reason.
+
+Create `DATA-COVERAGE.md` containing:
+
+- Total distinct observations.
+- Total unique entities.
+- Total playable collections.
+- Records per collection.
+- Reference periods covered.
+- Source names and links.
+- Licence and attribution information.
+- Exclusions and quality limitations.
+- Dataset generation date.
+- A short list of incomplete areas.
+
+Keep statistics accurate. Calculate totals from the actual generated data.
+
+The application must have an About/Data Sources screen that lists the principal datasets and licences. Provide source details without putting lengthy legal text into the gameplay screen.
+
+---
+
+# 7. Game architecture and deterministic behaviour
+
+Build the game engine as a separate module with pure logic wherever possible.
+
+Suggested modules:
+
+- `src/game/engine.ts`
+- `src/game/scoring.ts`
+- `src/game/queue.ts`
+- `src/game/difficulty.ts`
+- `src/game/daily.ts`
+- `src/data/loader.ts`
+- `src/data/validate.ts`
+- `src/storage.ts`
+
+Do not couple scoring logic to rendering.
+
+## 7.1 Difficulty algorithm
+
+Use a comparison-pair selection strategy based on ordered values or percentile ranks.
+
+Easy should favour pairs with a large percentile difference.
+
+Normal should offer a reasonable mix.
+
+Hard should favour pairs with a small percentile difference.
+
+Avoid relying only on ratios. Ratios can behave badly with zero, negative or differently scaled numbers.
+
+Generate or select valid pairs efficiently. Do not enumerate every possible pair if this would create unnecessary memory use.
+
+The difficulty system must operate only inside a valid comparison group.
+
+## 7.2 Randomisation
+
+Use a reliable shuffle or sampled-index method.
+
+Ensure:
+
+- A fact is not compared with itself.
+- Consecutive duplicates are prevented.
+- Equality is handled deliberately.
+- The active comparison pool remains compatible.
+- Randomisation cannot enter an infinite loop.
+- Daily mode is deterministic.
+- Other modes have suitably varied sequences.
+
+For reproducible tests, allow a seeded random generator to be injected into the game engine.
+
+## 7.3 State management
+
+Represent the game as an explicit state machine.
+
+Suggested states:
+
+- `idle`
+- `ready`
+- `question`
+- `revealing`
+- `correct`
+- `incorrect`
+- `finished`
+
+Transitions must be deliberate and tested.
+
+Prevent multiple taps from scoring the same question.
+
+Do not allow delayed animations or timeouts from an old question to change a newly started game.
+
+Clean up event listeners, timers, intervals and pending animation frames appropriately.
+
+Do not manipulate the entire app's global state from random components.
+
+---
+
+# 8. Stats screen
+
+Build a clean personal statistics area.
+
+Include:
+
+- Total games played.
+- Best Classic score.
+- Highest correct-answer streak.
+- Overall correct-answer count.
+- Overall accuracy where meaningful.
+- Best category.
+- Daily challenges completed.
+- Current daily participation streak.
+- A simple recent-games list.
+- Personal achievements.
+
+Keep the initial view useful and visual without turning it into a business analytics dashboard.
+
+Use custom-designed stat cards, typography and restrained visualisations only where they add value.
+
+## 8.1 Achievements
+
+Add a small set of real, locally tracked achievements, for example:
+
+- First Guess.
+- Five Correct.
+- Ten-Streak.
+- Perfect Daily.
+- Category Explorer.
+- Hundred Questions.
+
+Unlock an achievement only when its actual requirement has been met.
+
+Store achievements locally and avoid repeatedly celebrating the same unlock.
+
+Do not use fake scarcity, paid unlocks or manipulative notifications.
+
+---
+
+# 9. Settings
+
+Build a tidy iOS-style Settings screen with inset grouped sections.
+
+Include:
+
+### Gameplay
+
+- Default game mode.
+- Default difficulty.
+- Sound on/off.
+- Haptics on/off.
+- Reduced motion preference that respects the system setting.
+
+### Appearance
+
+- System theme.
+- Light theme.
+- Dark theme.
+
+### Data and privacy
+
+- View data sources.
+- View bundled dataset information.
+- Clear recent game history.
+- Reset all local statistics and settings.
+
+Use confirmations for destructive actions.
+
+### About
+
+- UP OR DOWN version.
+- Build stamp.
+- Add to Home Screen instructions.
+- Data attribution.
+- Privacy statement.
+- A concise note that gameplay is offline and stored locally.
+
+Do not add dozens of unnecessary switches.
+
+All settings must correspond to working functionality. Do not include placeholder controls.
+
+---
+
+# 10. Sound, haptics and animations
+
+Provide optional, understated feedback.
+
+Correct answer:
+
+- A crisp, positive visual transition.
+- A short, locally generated or bundled sound.
+- A subtle haptic where the platform genuinely supports it.
+
+Incorrect answer:
+
+- A distinct, brief sound.
+- A restrained visual indication.
+- No aggressive shaking or flashing that makes the game uncomfortable.
+
+New personal record:
+
+- A more rewarding but short-lived animation.
+
+Use the Web Audio API or small bundled sound assets. Do not load sounds from a CDN.
+
+Audio must not play unexpectedly before an appropriate user interaction.
+
+Haptic support on iOS web applications is limited and inconsistent. Detect support where possible, degrade gracefully and never claim that a vibration occurred if the browser does not support it.
+
+Respect the system's reduced-motion preference and include a sound preference.
+
+---
+
+# 11. iOS PWA requirements
+
+The primary target is an iPhone using Safari and an installed Home Screen PWA.
+
+Implement:
+
+- A valid web app manifest.
+- Apple touch icons.
+- Standalone display mode.
+- Correct theme colours.
+- `viewport-fit=cover`.
+- Safe-area-aware layouts.
+- A service worker with an appropriate application-shell strategy.
+- Local font and icon assets.
+- Install instructions for iOS.
+- A graceful experience when installation is not available.
+- Offline access to every shipped playable dataset.
+
+Precache the necessary application assets and dataset files, subject to sensible browser storage limits.
+
+Do not tell users that the PWA has been installed when it has not.
+
+On iOS, provide a short, clear Add to Home Screen sheet explaining the Safari Share → Add to Home Screen steps when appropriate.
+
+Use a proper update strategy. If a new version is available, notify the user and let them reload intentionally rather than corrupting an active game.
+
+Do not add complex orientation handling, tilt gameplay, speech recognition, camera recording or microphone features. These belong to different types of games and are unnecessary here.
+
+The application should behave normally in portrait mode, with a useful desktop layout and keyboard support for testing.
+
+---
+
+# 12. Accessibility and usability
+
+Implement:
+
+- Minimum 44-point touch targets.
+- Appropriate contrast.
+- Keyboard navigation on desktop.
+- Visible focus states.
+- Reduced-motion support.
+- Correct accessible names for controls.
+- Screen-reader announcements for answer results.
+- Large, resizable numerical typography.
+- Clear labels in addition to colours.
+- Sensible handling of dynamic text sizes and small screens.
+
+Do not announce the hidden comparison value through accessibility labels before the user answers.
+
+Do not let accessibility support reveal answers or change game scoring.
+
+Keep the active game easy to understand without requiring colour perception.
+
+---
+
+# 13. Project structure and maintainability
+
+Use a logical, modular structure similar to:
+
+```text
+public/
+  icons/
+  sounds/
+
+src/
+  app/
+    App.tsx
+    router.ts
+
+  components/
+    Button.tsx
+    BottomSheet.tsx
+    CategoryTile.tsx
+    FactCard.tsx
+    AnswerButton.tsx
+    ScoreDisplay.tsx
+
+  screens/
+    PlayScreen.tsx
+    CategoryScreen.tsx
+    GameScreen.tsx
+    ResultsScreen.tsx
+    StatsScreen.tsx
+    SettingsScreen.tsx
+
+  game/
+    engine.ts
+    queue.ts
+    scoring.ts
+    difficulty.ts
+    daily.ts
+    types.ts
+
+  data/
+    loader.ts
+    categories.ts
+    metrics.ts
+    manifest.json
+    generated/
+
+  design/
+    tokens.css
+    tokens.ts
+    strings.ts
+
+  services/
+    audio.ts
+    haptics.ts
+    storage.ts
+
+  styles/
+    global.css
+    components.css
+
+tests/
+  unit/
+  e2e/
+
+scripts/
+  data/
+
+design/
+  DATA-SOURCES.md
+  ART-DIRECTION.md
+  screens/
+
+README.md
+AGENTS.md
+PLAN.md
+DECISIONS.md
+DATA-COVERAGE.md
+PARITY.md
+```
+
+Adjust this structure when necessary. The purpose is clear separation of responsibilities, not creating empty files for every possible feature.
+
+Use a single source of truth for brand strings, tokens, metric definitions and category metadata.
+
+Do not leave multiple conflicting implementations of scoring or comparison rules.
+
+---
+
+# 14. Testing requirements
+
+Testing is part of the implementation, not a final optional step.
+
+## 14.1 Unit tests
+
+At minimum, cover:
+
+### Fact data
+
+- Unique IDs.
+- Provenance requirements.
+- Valid numeric values.
+- Valid metric definitions.
+- Dataset record counts.
+- Compatible comparison groups.
+- Duplicate detection.
+- Unit consistency.
+- Period consistency.
+- Correct numeric formatting.
+
+### Game engine
+
+- Higher answer is correct when appropriate.
+- Lower answer is correct when appropriate.
+- Incorrect answers register correctly.
+- Equal values never produce ambiguous questions.
+- Missing and invalid facts are excluded.
+- A question cannot score twice.
+- Streaks update correctly.
+- Classic ends after an incorrect answer.
+- Sprint continues after an incorrect answer.
+- Sprint finishes on time.
+- Daily mode contains exactly ten questions.
+- Daily sequences are reproducible.
+- A new daily date produces the intended new sequence.
+- No immediate duplicate comparisons.
+- No infinite loops on small or exhausted pools.
+- Scoring remains correct when answers are tapped rapidly.
+
+### Persistence
+
+- Scores survive reloads.
+- Settings survive reloads.
+- Corrupt storage does not crash the app.
+- Unavailable storage degrades gracefully.
+- Resetting statistics clears the relevant data.
+- Best scores do not decrease accidentally.
+
+## 14.2 End-to-end tests
+
+Use Playwright with a mobile viewport and realistic touch interactions.
+
+Test:
+
+1. Open the app and start Quick Play.
+2. Select a category and difficulty.
+3. Complete a correct comparison.
+4. Complete an incorrect comparison.
+5. Verify scores and streaks.
+6. Play multiple questions in succession.
+7. End a Classic round.
+8. Complete a Sprint round with a controllable test clock.
+9. Complete a Daily Challenge.
+10. Verify daily result persistence.
+11. Open Stats and verify updated records.
+12. Change settings.
+13. Reset data.
+14. Navigate away from and back to a running game safely.
+15. Handle fast, repeated taps.
+16. Verify there are no console errors.
+17. Verify the app works under a GitHub Pages subpath.
+18. Load the app, disconnect the network and play using bundled data.
+19. Test light and dark themes.
+20. Test narrow screens, long item names and unusually large values.
+
+Use a deterministic dataset and seeded randomness in automated tests. Do not make tests depend on live external APIs.
+
+## 14.3 Visual review
+
+Capture and inspect screenshots at approximately:
+
+- 390 × 844.
+- 375 × 812.
+- 844 × 390 for desktop/mobile landscape resilience.
+- A larger desktop viewport.
+
+Review:
+
+- Play screen.
+- Category browser.
+- Category details.
+- Active question.
+- Correct answer reveal.
+- Incorrect answer reveal.
+- Results.
+- Daily Challenge.
+- Stats.
+- Settings.
+- Data source information.
+- Installation help.
+- Empty or error states.
+
+Review in light and dark modes.
+
+Fix actual layout issues. Do not merely generate screenshots and declare success.
+
+Save the final screenshots in `design/screens/`.
+
+---
+
+# 15. CI, scripts and documentation
+
+Configure `package.json` with commands equivalent to:
+
+- `npm run dev`
+- `npm run build`
+- `npm run preview`
+- `npm run typecheck`
+- `npm test`
+- `npm run test:e2e`
+- `npm run data:validate`
+- `npm run data:report`
+- `npm run check`
+
+Add dataset generation or refresh commands where appropriate. Refreshing data must be an explicit development operation, not part of ordinary app startup or build.
+
+Set up GitHub Actions to run type checking, unit tests, data validation and production builds before deploying to GitHub Pages.
+
+Use supported Node.js versions and a reproducible lockfile.
+
+Ensure deployment handles the configured base path properly.
+
+## Documentation
+
+`README.md` must explain:
+
+- What the game is.
+- How to install dependencies and run it.
+- How to build and test it.
+- How to deploy to GitHub Pages.
+- How to install it on an iPhone.
+- How offline caching works.
+- How the fact database is sourced and generated.
+- How to refresh the data.
+- How source licences and attributions are maintained.
+- Which limitations apply to PWA features on iOS.
+
+`AGENTS.md` should contain concise coding and product rules for future changes.
+
+`DECISIONS.md` should record significant architectural, design and dataset decisions with their rationale.
+
+`PARITY.md` should be a practical checklist of the requirements in this brief and their corresponding tests or implementation locations.
+
+---
+
+# 16. Implementation plan
+
+Work in small, tested milestones.
+
+### Milestone 1 — Foundation
+
+Inspect the repository and establish the project architecture.
+
+Create:
+
+- `PLAN.md`.
+- The initial project scaffold.
+- Design tokens.
+- Typography.
+- Core routing and navigation.
+- PWA manifest and initial icons.
+- `AGENTS.md` and `DECISIONS.md`.
+
+### Milestone 2 — Fact acquisition and validation
+
+Build the data ingestion pipeline.
+
+Find and validate approved open datasets.
+
+Generate normalized fact records.
+
+Establish the final schema, comparison pools, source manifest and coverage report.
+
+**Prove the claimed data count from real generated records before calling the dataset complete.**
+
+### Milestone 3 — Game engine
+
+Implement the pure comparison engine, scoring, difficulty selection, deterministic randomisation, queue management and game states.
+
+Write the unit tests before integrating the game UI.
+
+### Milestone 4 — Visual application
+
+Implement the Play screen, category browser, selection flow and active gameplay screen.
+
+Get the comparison interaction feeling excellent before adding secondary features.
+
+### Milestone 5 — Modes and results
+
+Implement Classic, Sprint and Daily Challenge.
+
+Build the results screen, streaks, best scores and local persistence.
+
+### Milestone 6 — Stats and settings
+
+Implement the statistics, achievements, themes, sounds, haptics, data attribution and reset flow.
+
+### Milestone 7 — PWA and offline behaviour
+
+Implement service-worker caching, update handling, installation help and offline access to the entire supported dataset.
+
+Test offline reloads, not just offline navigation.
+
+### Milestone 8 — Quality assurance
+
+Run automated tests.
+
+Inspect screenshots in both themes and multiple viewports.
+
+Fix console errors, state bugs, spacing defects, accessibility problems and data issues.
+
+### Milestone 9 — Deployment
+
+Verify the production build and GitHub Pages deployment path.
+
+Finish the README, data report and requirements checklist.
+
+Write `HANDOFF-REPORT.md` with an honest summary of completed work, verified dataset size, data limitations and any remaining issues.
+
+Do not mark a milestone complete just because its files exist.
+
+---
+
+# 17. Definition of done
+
+The application is complete only when all of the following are true:
+
+- [ ] The app is named UP OR DOWN throughout.
+- [ ] The interface feels like a deliberately designed iOS game.
+- [ ] Play, Stats and Settings work.
+- [ ] Users can choose categories and difficulty.
+- [ ] Higher/Lower comparisons work correctly.
+- [ ] Scores, streaks, records and results are accurate.
+- [ ] Classic mode works.
+- [ ] 60-Second Sprint works.
+- [ ] Daily Challenge works offline and uses deterministic sequencing.
+- [ ] The application includes at least 10,000 distinct, source-backed numerical observations.
+- [ ] There are at least 20 playable categories or subcategories across six or more groups.
+- [ ] Data volume is measured from the actual bundled records.
+- [ ] Every published dataset has appropriate provenance and licence information.
+- [ ] No fabricated facts have been introduced to meet the target.
+- [ ] No incompatible facts can be compared.
+- [ ] Units, periods, missing values and ties are handled correctly.
+- [ ] Data validation and coverage-report commands work.
+- [ ] The PWA installs and works on iOS Safari.
+- [ ] The application runs from a GitHub Pages subpath.
+- [ ] It can load and play offline after the initial successful load.
+- [ ] Data, settings and statistics persist safely.
+- [ ] Light and dark themes work.
+- [ ] Accessibility and reduced-motion requirements are respected.
+- [ ] Unit tests, end-to-end tests, type checks and production builds pass.
+- [ ] There are no outstanding critical gameplay, data-integrity or console errors.
+- [ ] Final screenshots have been reviewed rather than merely generated.
+- [ ] Documentation accurately describes what was built.
+
+If any item fails, investigate it and fix it before declaring completion. Clearly document any limitation that genuinely cannot be resolved.
+
+---
+
+# 18. Final instruction
+
+Build this as a real product, not a throwaway demo.
+
+Prioritise the quality of three things above everything else:
+
+**1. The facts.** Thousands of genuinely useful, correctly sourced facts with sensible categories and reliable comparisons.
+
+**2. The gameplay.** Immediate understanding, responsive controls, fair comparisons, satisfying feedback and a strong reason to play one more round.
+
+**3. The design.** A distinctive, premium-feeling iPhone interface with beautiful typography, solid colours, careful spacing and excellent interaction details.
+
+Keep the implementation simple where simplicity is appropriate. Be thorough where reliability matters.
+
+Do not ask me questions. Make documented decisions, run the tests, inspect the actual interface and keep fixing issues until the requirements are met.
+
+**Build UP OR DOWN.**
